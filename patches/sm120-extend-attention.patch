@@ -1,0 +1,24 @@
+--- /workspace/sglang-main/python/sglang/srt/layers/attention/triton_ops/extend_attention.py.bak	2026-01-29 01:07:41.017963102 +0000
++++ /workspace/sglang-main/python/sglang/srt/layers/attention/triton_ops/extend_attention.py	2026-01-29 01:07:51.067679060 +0000
+@@ -63,9 +63,20 @@
+     if _is_hip:
+         BLOCK_M, BLOCK_N = (64, 64)
+         num_warps = 4
++    elif _is_cuda and CUDA_CAPABILITY[0] == 12:
++        # SM120 Blackwell RTX (RTX 5090, RTX PRO 6000, etc.)
++        # Has only ~100KB shared memory (vs 228KB on SM100 datacenter Blackwell)
++        # Use smaller block sizes similar to sm86/sm89 Ampere which also has ~100KB
++        if Lq <= 128:
++            BLOCK_M, BLOCK_N = (64, 64)
++        elif Lq <= 256:
++            BLOCK_M, BLOCK_N = (32, 64)
++        else:
++            BLOCK_M, BLOCK_N = (32, 32)
++        num_warps = 4 if Lq <= 64 else 8
+     else:
+         if _is_cuda and CUDA_CAPABILITY[0] >= 9:
+-            # Hopper architecture (H100, etc.)
++            # Hopper architecture (H100, etc.) and SM100 Blackwell datacenter
+             if Lq <= 256:
+                 BLOCK_M, BLOCK_N = (128, 64)
+             else:

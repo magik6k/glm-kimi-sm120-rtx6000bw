@@ -1,0 +1,9 @@
+name, memory.total [MiB], driver_version, compute_cap
+NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 580.95.05, 12.0
+NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 580.95.05, 12.0
+NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 580.95.05, 12.0
+NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 580.95.05, 12.0
+NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 580.95.05, 12.0
+NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 580.95.05, 12.0
+NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 580.95.05, 12.0
+NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 580.95.05, 12.0

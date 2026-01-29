@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimi K2 Deployment on RTX PRO 6000 Blackwell (SM120) - Benchmark Report</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --accent-green: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --accent-orange: #d29922;
+            --accent-red: #f85149;
+            --border-color: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+        
+        .date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        h2 {
+            color: var(--accent-blue);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h3 {
+            color: var(--text-primary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .stat-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-green);
+        }
+        
+        .stat-value.blue { color: var(--accent-blue); }
+        .stat-value.purple { color: var(--accent-purple); }
+        .stat-value.orange { color: var(--accent-orange); }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+        
+        tr:hover {
+            background: var(--bg-tertiary);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .status-success {
+            background: rgba(63, 185, 80, 0.2);
+            color: var(--accent-green);
+        }
+        
+        .status-failed {
+            background: rgba(248, 81, 73, 0.2);
+            color: var(--accent-red);
+        }
+        
+        .status-partial {
+            background: rgba(210, 153, 34, 0.2);
+            color: var(--accent-orange);
+        }
+        
+        .code-block {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .highlight {
+            color: var(--accent-green);
+        }
+        
+        .section {
+            margin: 3rem 0;
+        }
+        
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        @media (max-width: 900px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .info-box {
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid var(--accent-blue);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .warning-box {
+            background: rgba(210, 153, 34, 0.1);
+            border: 1px solid var(--accent-orange);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .success-box {
+            background: rgba(63, 185, 80, 0.1);
+            border: 1px solid var(--accent-green);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin: 0.5rem 0;
+        }
+        
+        .metric-comparison {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .metric-item {
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        .metric-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        
+        .metric-sublabel {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kimi K2 on RTX PRO 6000 Blackwell</h1>
+            <p class="subtitle">SM120 Deployment Benchmark Report</p>
+            <p class="date">January 29, 2026</p>
+        </header>
+
+        <!-- Executive Summary -->
+        <section class="section">
+            <h2>Executive Summary</h2>
+            
+            <div class="success-box">
+                <strong>Successfully deployed Kimi K2 models on 8x RTX PRO 6000 Blackwell (SM120)</strong> after developing a custom patch for the Triton attention extend kernel to fix shared memory exhaustion issues.
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">5,816</div>
+                    <div class="stat-label">Peak tok/s (K2-Thinking)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value blue">985</div>
+                    <div class="stat-label">Peak tok/s (K2.5 INT4)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value purple">768 GB</div>
+                    <div class="stat-label">Total VRAM (8x96GB)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value orange">180K</div>
+                    <div class="stat-label">Max KV Cache Tokens</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hardware Configuration -->
+        <section class="section">
+            <h2>Hardware Configuration</h2>
+            <div class="two-col">
+                <div class="card">
+                    <h3 class="card-title">GPU Specifications</h3>
+                    <table>
+                        <tr><td>GPUs</td><td>8x NVIDIA RTX PRO 6000 Blackwell</td></tr>
+                        <tr><td>Architecture</td><td>SM120 (Blackwell)</td></tr>
+                        <tr><td>VRAM per GPU</td><td>96 GB GDDR6X</td></tr>
+                        <tr><td>Total VRAM</td><td>768 GB</td></tr>
+                        <tr><td>Shared Memory</td><td>~100 KB per SM</td></tr>
+                        <tr><td>Interconnect</td><td>PCIe only (no NVLink)</td></tr>
+                    </table>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">GPU Topology</h3>
+                    <table>
+                        <tr><td>PIX pairs</td><td>GPU 0↔1, 2↔3, 4↔5, 6↔7</td></tr>
+                        <tr><td>NUMA nodes</td><td>2 (4 GPUs each)</td></tr>
+                        <tr><td>CPU</td><td>Dual-socket system</td></tr>
+                        <tr><td>System RAM</td><td>~1.5 TB</td></tr>
+                    </table>
+                    <div class="warning-box" style="margin-top: 1rem;">
+                        <strong>Note:</strong> SM120 (consumer Blackwell) has only ~100KB shared memory vs 228KB on SM100 (datacenter Blackwell).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Models Tested -->
+        <section class="section">
+            <h2>Models Tested</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Quantization</th>
+                        <th>Size</th>
+                        <th>Experts</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Kimi K2.5</strong></td>
+                        <td>INT4 (Marlin)</td>
+                        <td>~557 GB</td>
+                        <td>384 experts, 8+1 active</td>
+                        <td><span class="status-badge status-success">WORKING</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kimi K2-Thinking</strong></td>
+                        <td>NVFP4 (cuDNN FP4)</td>
+                        <td>~555 GB</td>
+                        <td>384 experts, 8+1 active</td>
+                        <td><span class="status-badge status-success">WORKING</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- The Problem & Solution -->
+        <section class="section">
+            <h2>The Problem & Solution</h2>
+            <div class="two-col">
+                <div class="card">
+                    <h3 class="card-title">The Problem</h3>
+                    <p>Triton attention extend kernel crashed with:</p>
+                    <div class="code-block">
+triton.runtime.errors.OutOfResources: 
+out of resource: shared memory, 
+Required: <span class="highlight">106496</span>, Hardware limit: <span class="highlight">101376</span>
+                    </div>
+                    <p style="margin-top: 1rem;">The kernel was compiled for Hopper (SM90) with large block sizes that exceeded SM120's shared memory limit.</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">The Solution</h3>
+                    <p>Added SM120-specific case in <code>extend_attention.py</code>:</p>
+                    <div class="code-block">
+elif _is_cuda and CUDA_CAPABILITY[0] == 12:
+    # SM120 Blackwell RTX
+    if Lq <= 128:
+        BLOCK_M, BLOCK_N = (64, 64)
+    elif Lq <= 256:
+        BLOCK_M, BLOCK_N = (32, 64)
+    else:
+        BLOCK_M, BLOCK_N = (32, 32)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Throughput Charts -->
+        <section class="section">
+            <h2>Performance Benchmarks</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3 class="card-title">K2-Thinking NVFP4: Throughput vs Concurrency</h3>
+                    <div class="chart-container">
+                        <canvas id="k2ThinkingThroughput"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">K2.5 INT4: Throughput vs Concurrency</h3>
+                    <div class="chart-container">
+                        <canvas id="k25Throughput"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3 class="card-title">Throughput Comparison (Total tok/s)</h3>
+                    <div class="chart-container">
+                        <canvas id="throughputComparison"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Latency Comparison (TPOT ms)</h3>
+                    <div class="chart-container">
+                        <canvas id="latencyComparison"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Results Tables -->
+        <section class="section">
+            <h2>Detailed Benchmark Results</h2>
+            
+            <h3>K2-Thinking NVFP4 (256 input, 100 output tokens)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Concurrency</th>
+                        <th>Output tok/s</th>
+                        <th>Total tok/s</th>
+                        <th>Peak tok/s</th>
+                        <th>Mean TTFT</th>
+                        <th>Mean TPOT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>128</td><td>524</td><td>1,795</td><td>1,197</td><td>1,324 ms</td><td>160 ms</td></tr>
+                    <tr><td>256</td><td>867</td><td>3,039</td><td>1,937</td><td>827 ms</td><td>207 ms</td></tr>
+                    <tr><td>512</td><td>1,192</td><td>4,345</td><td>3,128</td><td>1,954 ms</td><td>401 ms</td></tr>
+                    <tr><td>1024</td><td>1,610</td><td>5,655</td><td>4,941</td><td>3,560 ms</td><td>687 ms</td></tr>
+                    <tr style="background: rgba(63, 185, 80, 0.1);"><td><strong>2048</strong></td><td><strong>1,650</strong></td><td><strong>5,816</strong></td><td>3,507</td><td>12,406 ms</td><td>576 ms</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem;">K2.5 INT4 (256 input, 100 output tokens)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Concurrency</th>
+                        <th>Output tok/s</th>
+                        <th>Total tok/s</th>
+                        <th>Peak tok/s</th>
+                        <th>Mean TTFT</th>
+                        <th>Mean TPOT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>32</td><td>171</td><td>712</td><td>323</td><td>363 ms</td><td>96 ms</td></tr>
+                    <tr><td>64</td><td>214</td><td>864</td><td>357</td><td>2,026 ms</td><td>84 ms</td></tr>
+                    <tr><td>128</td><td>258</td><td>884</td><td>423</td><td>8,330 ms</td><td>85 ms</td></tr>
+                    <tr><td>256</td><td>267</td><td>935</td><td>449</td><td>19,010 ms</td><td>84 ms</td></tr>
+                    <tr><td>500</td><td>270</td><td>985</td><td>439</td><td>38,647 ms</td><td>88 ms</td></tr>
+                    <tr style="background: rgba(88, 166, 255, 0.1);"><td><strong>1000</strong></td><td><strong>281</strong></td><td><strong>985</strong></td><td>419</td><td>85,590 ms</td><td>91 ms</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Memory Analysis -->
+        <section class="section">
+            <h2>Memory Analysis</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3 class="card-title">K2-Thinking NVFP4</h3>
+                    <div class="chart-container">
+                        <canvas id="k2MemoryChart"></canvas>
+                    </div>
+                    <table style="margin-top: 1rem;">
+                        <tr><td>Model Weights</td><td>73.87 GB/GPU</td></tr>
+                        <tr><td>KV Cache</td><td>~6 GB/GPU</td></tr>
+                        <tr><td>KV Cache Capacity</td><td><strong>180,191 tokens</strong></td></tr>
+                        <tr><td>Available after load</td><td>12.24 GB/GPU</td></tr>
+                    </table>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">K2.5 INT4</h3>
+                    <div class="chart-container">
+                        <canvas id="k25MemoryChart"></canvas>
+                    </div>
+                    <table style="margin-top: 1rem;">
+                        <tr><td>Model Weights</td><td>72.33 GB/GPU</td></tr>
+                        <tr><td>KV Cache</td><td>~0.3 GB/GPU</td></tr>
+                        <tr><td>KV Cache Capacity</td><td><strong>4,578 tokens</strong></td></tr>
+                        <tr><td>Available after load</td><td>19.71 GB/GPU</td></tr>
+                    </table>
+                    <div class="warning-box" style="margin-top: 1rem;">
+                        K2.5 INT4 has BF16 attention weights (not quantized), consuming more memory and leaving less for KV cache.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Findings -->
+        <section class="section">
+            <h2>Key Findings</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3 class="card-title">Why K2-Thinking Outperforms K2.5</h3>
+                    <ul>
+                        <li><strong>40x larger KV cache</strong> (180K vs 4.5K tokens)</li>
+                        <li>NVFP4 quantization is more memory-efficient</li>
+                        <li>cuDNN FP4 GEMM works well on SM120</li>
+                        <li>Can sustain high concurrency without queuing</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">SM120 vs SM100 Differences</h3>
+                    <ul>
+                        <li><strong>Shared memory:</strong> 100KB (SM120) vs 228KB (SM100)</li>
+                        <li>Consumer Blackwell requires kernel modifications</li>
+                        <li>TMA block layouts don't work on SM120</li>
+                        <li>Persistent kernels must be disabled</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deployment Timeline -->
+        <section class="section">
+            <h2>Deployment Attempts Timeline</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Attempt</th>
+                        <th>Model</th>
+                        <th>Configuration</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>K2.5 INT4</td>
+                        <td>SGLang Main</td>
+                        <td><span class="status-badge status-failed">FAILED</span> - Shared memory (106KB > 101KB)</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>K2.5 INT4</td>
+                        <td>SGLang PR #16975</td>
+                        <td><span class="status-badge status-failed">FAILED</span> - Model class incompatibility</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>K2-Thinking NVFP4</td>
+                        <td>SGLang Main</td>
+                        <td><span class="status-badge status-partial">PARTIAL</span> - Short prompts only</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>K2-Thinking NVFP4</td>
+                        <td>SGLang PR #16975</td>
+                        <td><span class="status-badge status-partial">PARTIAL</span> - PR fixes don't cover attention</td>
+                    </tr>
+                    <tr style="background: rgba(63, 185, 80, 0.1);">
+                        <td><strong>5</strong></td>
+                        <td><strong>K2-Thinking NVFP4</strong></td>
+                        <td><strong>Main + SM120 Patch</strong></td>
+                        <td><span class="status-badge status-success">SUCCESS</span> - 5,816 tok/s peak</td>
+                    </tr>
+                    <tr style="background: rgba(63, 185, 80, 0.1);">
+                        <td><strong>6</strong></td>
+                        <td><strong>K2.5 INT4</strong></td>
+                        <td><strong>Main + SM120 Patch</strong></td>
+                        <td><span class="status-badge status-success">SUCCESS</span> - 985 tok/s peak</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Recommendations -->
+        <section class="section">
+            <h2>Recommendations</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3 class="card-title">For Production Use</h3>
+                    <ul>
+                        <li><strong>Use K2-Thinking NVFP4</strong> for highest throughput</li>
+                        <li>Apply the <code>extend_attention.py</code> SM120 patch</li>
+                        <li>Target 512-1024 concurrent requests for optimal throughput</li>
+                        <li>Monitor KV cache utilization</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">For Upstream Contribution</h3>
+                    <ul>
+                        <li>Submit SM120 attention fix to SGLang</li>
+                        <li>Combine with PR #16975 for MoE fixes</li>
+                        <li>Add SM120 detection to kernel autotuning</li>
+                        <li>Generate optimized MoE configs for E=384</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); color: var(--text-secondary);">
+            <p>Generated: January 29, 2026 | Hardware: 8x NVIDIA RTX PRO 6000 Blackwell (SM120)</p>
+            <p style="margin-top: 0.5rem;">Patch: <code>artifacts/patches/sm120-extend-attention.patch</code></p>
+        </footer>
+    </div>
+
+    <script>
+        // Chart.js default configuration
+        Chart.defaults.color = '#8b949e';
+        Chart.defaults.borderColor = '#30363d';
+
+        // K2-Thinking Throughput Chart
+        new Chart(document.getElementById('k2ThinkingThroughput'), {
+            type: 'line',
+            data: {
+                labels: ['128', '256', '512', '1024', '2048'],
+                datasets: [{
+                    label: 'Output tok/s',
+                    data: [524, 867, 1192, 1610, 1650],
+                    borderColor: '#3fb950',
+                    backgroundColor: 'rgba(63, 185, 80, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }, {
+                    label: 'Total tok/s',
+                    data: [1795, 3039, 4345, 5655, 5816],
+                    borderColor: '#58a6ff',
+                    backgroundColor: 'rgba(88, 166, 255, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    x: { title: { display: true, text: 'Concurrent Requests' } },
+                    y: { title: { display: true, text: 'Tokens/second' } }
+                }
+            }
+        });
+
+        // K2.5 Throughput Chart
+        new Chart(document.getElementById('k25Throughput'), {
+            type: 'line',
+            data: {
+                labels: ['32', '64', '128', '256', '500', '1000'],
+                datasets: [{
+                    label: 'Output tok/s',
+                    data: [171, 214, 258, 267, 270, 281],
+                    borderColor: '#a371f7',
+                    backgroundColor: 'rgba(163, 113, 247, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }, {
+                    label: 'Total tok/s',
+                    data: [712, 864, 884, 935, 985, 985],
+                    borderColor: '#d29922',
+                    backgroundColor: 'rgba(210, 153, 34, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    x: { title: { display: true, text: 'Concurrent Requests' } },
+                    y: { title: { display: true, text: 'Tokens/second' } }
+                }
+            }
+        });
+
+        // Throughput Comparison Bar Chart
+        new Chart(document.getElementById('throughputComparison'), {
+            type: 'bar',
+            data: {
+                labels: ['128', '256', '512', '1024'],
+                datasets: [{
+                    label: 'K2-Thinking NVFP4',
+                    data: [1795, 3039, 4345, 5655],
+                    backgroundColor: 'rgba(63, 185, 80, 0.7)',
+                    borderColor: '#3fb950',
+                    borderWidth: 1
+                }, {
+                    label: 'K2.5 INT4',
+                    data: [884, 935, 985, 985],
+                    backgroundColor: 'rgba(88, 166, 255, 0.7)',
+                    borderColor: '#58a6ff',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    x: { title: { display: true, text: 'Concurrent Requests' } },
+                    y: { title: { display: true, text: 'Total Tokens/second' } }
+                }
+            }
+        });
+
+        // Latency Comparison
+        new Chart(document.getElementById('latencyComparison'), {
+            type: 'bar',
+            data: {
+                labels: ['128', '256', '512', '1024'],
+                datasets: [{
+                    label: 'K2-Thinking NVFP4',
+                    data: [160, 207, 401, 687],
+                    backgroundColor: 'rgba(63, 185, 80, 0.7)',
+                    borderColor: '#3fb950',
+                    borderWidth: 1
+                }, {
+                    label: 'K2.5 INT4',
+                    data: [85, 84, 85, 91],
+                    backgroundColor: 'rgba(88, 166, 255, 0.7)',
+                    borderColor: '#58a6ff',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    x: { title: { display: true, text: 'Concurrent Requests' } },
+                    y: { title: { display: true, text: 'Mean TPOT (ms)' } }
+                }
+            }
+        });
+
+        // K2-Thinking Memory Chart
+        new Chart(document.getElementById('k2MemoryChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Model Weights', 'KV Cache', 'Available'],
+                datasets: [{
+                    data: [73.87, 6, 12.24],
+                    backgroundColor: [
+                        'rgba(63, 185, 80, 0.7)',
+                        'rgba(88, 166, 255, 0.7)',
+                        'rgba(48, 54, 61, 0.7)'
+                    ],
+                    borderColor: [
+                        '#3fb950',
+                        '#58a6ff',
+                        '#30363d'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: { display: true, text: 'VRAM Usage per GPU (96 GB)' }
+                }
+            }
+        });
+
+        // K2.5 Memory Chart
+        new Chart(document.getElementById('k25MemoryChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Model Weights', 'KV Cache', 'Available'],
+                datasets: [{
+                    data: [72.33, 0.3, 19.71],
+                    backgroundColor: [
+                        'rgba(163, 113, 247, 0.7)',
+                        'rgba(210, 153, 34, 0.7)',
+                        'rgba(48, 54, 61, 0.7)'
+                    ],
+                    borderColor: [
+                        '#a371f7',
+                        '#d29922',
+                        '#30363d'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: { display: true, text: 'VRAM Usage per GPU (96 GB)' }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

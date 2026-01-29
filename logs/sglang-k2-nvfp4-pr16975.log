@@ -1,0 +1,1056 @@
+[2026-01-29 00:52:47] WARNING model_config.py:801: DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:52:47] INFO server_args.py:1650: Attention backend not specified. Use triton backend by default.
+[2026-01-29 00:52:48] server_args=ServerArgs(model_path='nvidia/Kimi-K2-Thinking-NVFP4', tokenizer_path='nvidia/Kimi-K2-Thinking-NVFP4', tokenizer_mode='auto', tokenizer_worker_num=1, skip_tokenizer_init=False, load_format='auto', model_loader_extra_config='{}', trust_remote_code=True, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl='auto', host='127.0.0.1', port=30000, fastapi_root_path='', grpc_mode=False, skip_server_warmup=False, warmups=None, nccl_port=None, checkpoint_engine_wait_weights_before_ready=False, dtype='auto', quantization='modelopt_fp4', quantization_param_path=None, kv_cache_dtype='auto', enable_fp32_lm_head=False, modelopt_quant=None, modelopt_checkpoint_restore_path=None, modelopt_checkpoint_save_path=None, modelopt_export_path=None, quantize_and_serve=False, rl_quant_profile=None, mem_fraction_static=0.848, max_running_requests=None, max_queued_requests=None, max_total_tokens=None, chunked_prefill_size=8192, enable_dynamic_chunking=False, max_prefill_tokens=16384, prefill_max_requests=None, schedule_policy='fcfs', enable_priority_scheduling=False, abort_on_priority_when_disabled=False, schedule_low_priority_values_first=False, priority_scheduling_preemption_threshold=10, schedule_conservativeness=1.0, page_size=1, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, radix_eviction_policy='lru', enable_prefill_delayer=False, prefill_delayer_max_delay_passes=30, prefill_delayer_token_usage_low_watermark=None, prefill_delayer_forward_passes_buckets=None, prefill_delayer_wait_seconds_buckets=None, device='cuda', tp_size=8, pp_size=1, pp_max_micro_batch_size=None, pp_async_batch_depth=0, stream_interval=1, stream_output=False, random_seed=970173175, constrained_json_whitespace_pattern=None, constrained_json_disable_any_whitespace=False, watchdog_timeout=300, soft_watchdog_timeout=None, dist_timeout=None, download_dir=None, model_checksum=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, custom_sigquit_handler=None, log_level='info', log_level_http=None, log_requests=False, log_requests_level=2, log_requests_format='text', log_requests_target=None, crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_metrics_for_all_schedulers=False, tokenizer_metrics_custom_labels_header='x-custom-labels', tokenizer_metrics_allowed_custom_labels=None, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, prompt_tokens_buckets=None, generation_tokens_buckets=None, gc_warning_threshold_secs=0.0, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, enable_trace=False, otlp_traces_endpoint='localhost:4317', export_metrics_to_file=False, export_metrics_to_file_dir=None, api_key=None, served_model_name='nvidia/Kimi-K2-Thinking-NVFP4', weight_version='default', chat_template=None, completion_template=None, file_storage_path='sglang_storage', enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, tool_server=None, sampling_defaults='model', dp_size=1, load_balance_method='round_robin', dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args='{}', preferred_sampling_params=None, enable_lora=None, max_lora_rank=None, lora_target_modules=None, lora_paths=None, max_loaded_loras=None, max_loras_per_batch=8, lora_eviction_policy='lru', lora_backend='csgmv', max_lora_chunk_size=16, attention_backend='triton', decode_attention_backend=None, prefill_attention_backend=None, sampling_backend='flashinfer', grammar_backend='xgrammar', mm_attention_backend=None, fp8_gemm_runner_backend='auto', nsa_prefill_backend='flashmla_sparse', nsa_decode_backend='fa3', disable_flashinfer_autotune=False, speculative_algorithm=None, speculative_draft_model_path=None, speculative_draft_model_revision=None, speculative_draft_load_format=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, speculative_attention_mode='prefill', speculative_draft_attention_backend=None, speculative_moe_runner_backend='auto', speculative_moe_a2a_backend=None, speculative_draft_model_quantization='modelopt_fp4', speculative_ngram_min_match_window_size=1, speculative_ngram_max_match_window_size=12, speculative_ngram_min_bfs_breadth=1, speculative_ngram_max_bfs_breadth=10, speculative_ngram_match_type='BFS', speculative_ngram_branch_length=18, speculative_ngram_capacity=10000000, enable_multi_layer_eagle=False, ep_size=1, moe_a2a_backend='none', moe_runner_backend='auto', flashinfer_mxfp4_moe_precision='default', enable_flashinfer_allreduce_fusion=False, deepep_mode='auto', ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location='trivial', enable_eplb=False, eplb_algorithm='auto', eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, eplb_min_rebalancing_utilization_threshold=1.0, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, elastic_ep_backend=None, mooncake_ib_device=None, max_mamba_cache_size=None, mamba_ssm_dtype='float32', mamba_full_memory_ratio=0.9, mamba_scheduler_strategy='no_buffer', mamba_track_interval=256, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy='write_through', hicache_io_backend='kernel', hicache_mem_layout='layer_first', hicache_storage_backend=None, hicache_storage_prefetch_policy='best_effort', hicache_storage_backend_extra_config=None, hierarchical_sparse_attention_extra_config=None, enable_lmcache=False, kt_weight_path=None, kt_method='AMXINT4', kt_cpuinfer=None, kt_threadpool_count=2, kt_num_gpu_experts=None, kt_max_deferred_experts_per_token=None, dllm_algorithm=None, dllm_algorithm_config=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type='qk', ds_sparse_decode_threshold=4096, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode='cpu', multi_item_scoring_delimiter=None, disable_radix_cache=False, cuda_graph_max_bs=512, cuda_graph_bs=[1, 2, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_layerwise_nvtx_marker=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_tokenizer_batch_decode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, enable_torch_symm_mem=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_single_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, enable_piecewise_cuda_graph=False, enable_torch_compile_debug_mode=False, torch_compile_max_bs=32, piecewise_cuda_graph_max_tokens=2048, piecewise_cuda_graph_tokens=[4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 640, 704, 768, 832, 896, 960, 1024, 1280, 1536, 1792, 2048], piecewise_cuda_graph_compiler='eager', torchao_config='', enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, triton_attention_split_tile_size=None, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, enable_weights_cpu_backup=False, enable_draft_weights_cpu_backup=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, keep_mm_feature_on_device=False, enable_return_hidden_states=False, enable_return_routed_experts=False, scheduler_recv_interval=1, numa_node=None, enable_deterministic_inference=False, rl_on_policy_target=None, enable_attn_tp_input_scattered=False, enable_nsa_prefill_context_parallel=False, nsa_prefill_cp_mode='in-seq-split', enable_fused_qk_norm_rope=False, enable_precise_embedding_interpolation=False, enable_dynamic_batch_tokenizer=False, dynamic_batch_tokenizer_batch_size=32, dynamic_batch_tokenizer_batch_timeout=0.002, debug_tensor_dump_output_folder=None, debug_tensor_dump_layers=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode='null', disaggregation_transfer_backend='mooncake', disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, disaggregation_decode_enable_offload_kvcache=False, disaggregation_decode_enable_fake_auto=False, num_reserved_decode_tokens=512, disaggregation_decode_polling_interval=1, encoder_only=False, language_only=False, encoder_transfer_backend='zmq_to_scheduler', encoder_urls=[], custom_weight_loader=[], weight_loader_disable_mmap=False, remote_instance_weight_loader_seed_instance_ip=None, remote_instance_weight_loader_seed_instance_service_port=None, remote_instance_weight_loader_send_weights_group_ports=None, remote_instance_weight_loader_backend='nccl', remote_instance_weight_loader_start_seed_via_transfer_engine=False, enable_pdmux=False, pdmux_config_path=None, sm_group_num=8, mm_max_concurrent_calls=32, mm_per_request_timeout=10.0, enable_broadcast_mm_inputs_process=False, enable_prefix_mm_cache=False, mm_enable_dp_encoder=False, mm_process_config={}, limit_mm_data_per_request=None, decrypted_config_file=None, decrypted_draft_config_file=None, forward_hooks=None)
+[2026-01-29 00:52:48] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:52:49] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:52:49] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+[2026-01-29 00:52:49] Using default HuggingFace chat template with detected content format: openai
+[2026-01-29 00:53:00 TP2] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:53:01 TP2] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:53:01 TP2] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+[2026-01-29 00:53:01 TP2] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:53:01 TP2] Init torch distributed begin.
+[2026-01-29 00:53:01 TP0] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:53:01 TP7] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:53:01 TP0] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:53:01 TP0] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+[2026-01-29 00:53:01 TP6] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:53:01 TP7] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:53:01 TP7] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+[2026-01-29 00:53:01 TP0] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:53:01 TP0] Init torch distributed begin.
+[2026-01-29 00:53:01 TP3] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:53:01 TP4] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+[2026-01-29 00:53:01 TP7] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:53:01 TP7] Init torch distributed begin.
+[2026-01-29 00:53:01 TP5] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:53:02 TP1] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:53:02 TP6] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:53:02 TP6] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+[2026-01-29 00:53:02] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:53:02] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+[2026-01-29 00:53:02 TP3] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:53:02 TP3] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+[2026-01-29 00:53:02 TP4] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:53:02 TP4] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+[2026-01-29 00:53:02 TP6] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+[2026-01-29 00:53:02 TP6] Init torch distributed begin.
+[2026-01-29 00:53:02 TP5] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:53:02 TP5] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+[2026-01-29 00:53:02 TP3] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:53:02 TP3] Init torch distributed begin.
+[2026-01-29 00:53:02 TP1] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:53:02 TP1] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+[2026-01-29 00:53:02 TP4] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:53:02 TP4] Init torch distributed begin.
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+[2026-01-29 00:53:02 TP5] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:53:02 TP5] Init torch distributed begin.
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+[2026-01-29 00:53:02 TP1] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-29 00:53:02 TP1] Init torch distributed begin.
+[Gloo] Rank [Gloo] Rank 41 is connected to  is connected to 77 peer ranks.  peer ranks. Expected number of connected peer ranks is : Expected number of connected peer ranks is : 77
+
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank [Gloo] Rank 56 is connected to  is connected to [Gloo] Rank 777 peer ranks.  peer ranks.  is connected to Expected number of connected peer ranks is : Expected number of connected peer ranks is : 777 peer ranks. 
+
+Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[2026-01-29 00:53:02 TP0] sglang is using nccl==2.27.5
+[2026-01-29 00:53:03 TP7] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-29 00:53:03 TP6] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-29 00:53:03 TP0] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-29 00:53:03 TP5] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-29 00:53:03 TP1] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-29 00:53:03 TP4] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-29 00:53:03 TP2] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-29 00:53:03 TP3] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank [Gloo] Rank 00 is connected to  is connected to 0[Gloo] Rank 0 peer ranks. 0 peer ranks. Expected number of connected peer ranks is :  is connected to Expected number of connected peer ranks is : 000
+ peer ranks. 
+Expected number of connected peer ranks is : 0
+[Gloo] Rank [Gloo] Rank 0[Gloo] Rank [Gloo] Rank 0 is connected to 00 is connected to 0 is connected to  is connected to 0 peer ranks. 00 peer ranks. Expected number of connected peer ranks is :  peer ranks.  peer ranks. Expected number of connected peer ranks is : 0Expected number of connected peer ranks is : Expected number of connected peer ranks is : 0
+00
+
+
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0[Gloo] Rank  is connected to 00 is connected to  peer ranks. 0Expected number of connected peer ranks is :  peer ranks. 0Expected number of connected peer ranks is : 
+0
+[Gloo] Rank 0 is connected to 0[Gloo] Rank  peer ranks. 0Expected number of connected peer ranks is :  is connected to 00
+ peer ranks. [Gloo] Rank Expected number of connected peer ranks is : 00 is connected to 
+0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank [Gloo] Rank 65 is connected to  is connected to 77 peer ranks.  peer ranks. Expected number of connected peer ranks is : Expected number of connected peer ranks is : 77
+
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[2026-01-29 00:53:03 TP0] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-29 00:53:03 TP6] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-29 00:53:03 TP5] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-29 00:53:03 TP7] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-29 00:53:03 TP4] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-29 00:53:03 TP3] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-29 00:53:03 TP2] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-29 00:53:03 TP1] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-29 00:53:04 TP0] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-29 00:53:04 TP7] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-29 00:53:04 TP5] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-29 00:53:04 TP2] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-29 00:53:04 TP4] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-29 00:53:04 TP1] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-29 00:53:04 TP3] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-29 00:53:04 TP6] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-29 00:53:04 TP6] Load weight begin. avail mem=94.08 GB
+[2026-01-29 00:53:04 TP5] Load weight begin. avail mem=94.08 GB
+[2026-01-29 00:53:04 TP4] Load weight begin. avail mem=94.08 GB
+[2026-01-29 00:53:04 TP6] Using ModelOptModelLoader due to ModelOpt quantization config.
+[2026-01-29 00:53:04 TP5] Using ModelOptModelLoader due to ModelOpt quantization config.
+[2026-01-29 00:53:04 TP6] ModelOptModelLoader: Loading base model...
+[2026-01-29 00:53:04 TP5] ModelOptModelLoader: Loading base model...
+[2026-01-29 00:53:04 TP4] Using ModelOptModelLoader due to ModelOpt quantization config.
+[2026-01-29 00:53:04 TP4] ModelOptModelLoader: Loading base model...
+[2026-01-29 00:53:04 TP1] Load weight begin. avail mem=94.08 GB
+[2026-01-29 00:53:04 TP1] Using ModelOptModelLoader due to ModelOpt quantization config.
+[2026-01-29 00:53:04 TP1] ModelOptModelLoader: Loading base model...
+[2026-01-29 00:53:04 TP2] Load weight begin. avail mem=94.08 GB
+[2026-01-29 00:53:04 TP2] Using ModelOptModelLoader due to ModelOpt quantization config.
+[2026-01-29 00:53:04 TP2] ModelOptModelLoader: Loading base model...
+[2026-01-29 00:53:04 TP0] Load weight begin. avail mem=94.08 GB
+[2026-01-29 00:53:04 TP0] Using ModelOptModelLoader due to ModelOpt quantization config.
+[2026-01-29 00:53:04 TP0] ModelOptModelLoader: Loading base model...
+[2026-01-29 00:53:04 TP3] Load weight begin. avail mem=94.08 GB
+[2026-01-29 00:53:04 TP3] Using ModelOptModelLoader due to ModelOpt quantization config.
+[2026-01-29 00:53:04 TP3] ModelOptModelLoader: Loading base model...
+[2026-01-29 00:53:04 TP1] Model is already quantized, loading directly...
+[2026-01-29 00:53:04 TP1] Detected nvfp4 checkpoint. Please note that the format is experimental and subject to change.
+[2026-01-29 00:53:04 TP2] Model is already quantized, loading directly...
+[2026-01-29 00:53:04 TP2] Detected nvfp4 checkpoint. Please note that the format is experimental and subject to change.
+[2026-01-29 00:53:04 TP3] Model is already quantized, loading directly...
+[2026-01-29 00:53:04 TP3] Detected nvfp4 checkpoint. Please note that the format is experimental and subject to change.
+[2026-01-29 00:53:04 TP4] Model is already quantized, loading directly...
+[2026-01-29 00:53:04 TP4] Detected nvfp4 checkpoint. Please note that the format is experimental and subject to change.
+[2026-01-29 00:53:04 TP7] Load weight begin. avail mem=94.08 GB
+[2026-01-29 00:53:04 TP7] Using ModelOptModelLoader due to ModelOpt quantization config.
+[2026-01-29 00:53:04 TP7] ModelOptModelLoader: Loading base model...
+[2026-01-29 00:53:04 TP7] Model is already quantized, loading directly...
+[2026-01-29 00:53:04 TP7] Detected nvfp4 checkpoint. Please note that the format is experimental and subject to change.
+[2026-01-29 00:53:05 TP0] Model is already quantized, loading directly...
+[2026-01-29 00:53:05 TP0] Detected nvfp4 checkpoint. Please note that the format is experimental and subject to change.
+[2026-01-29 00:53:05 TP0] Config not support fused shared expert(s). Shared experts fusion optimization is disabled.
+[2026-01-29 00:53:05 TP6] Model is already quantized, loading directly...
+[2026-01-29 00:53:05 TP6] Detected nvfp4 checkpoint. Please note that the format is experimental and subject to change.
+[2026-01-29 00:53:05 TP5] Model is already quantized, loading directly...
+[2026-01-29 00:53:05 TP5] Detected nvfp4 checkpoint. Please note that the format is experimental and subject to change.
+[2026-01-29 00:53:05 TP0] Found local HF snapshot for nvidia/Kimi-K2-Thinking-NVFP4 at /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4; skipping download.
+Loading safetensors checkpoint shards:   0% Completed | 0/119 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:   4% Completed | 5/119 [00:00<00:02, 41.57it/s]
+Loading safetensors checkpoint shards:   8% Completed | 10/119 [00:00<00:02, 37.68it/s]
+Loading safetensors checkpoint shards:  12% Completed | 14/119 [00:00<00:02, 37.20it/s]
+Loading safetensors checkpoint shards:  15% Completed | 18/119 [00:00<00:02, 37.00it/s]
+Loading safetensors checkpoint shards:  18% Completed | 22/119 [00:00<00:02, 36.57it/s]
+Loading safetensors checkpoint shards:  22% Completed | 26/119 [00:00<00:04, 19.85it/s]
+Loading safetensors checkpoint shards:  25% Completed | 30/119 [00:01<00:03, 23.04it/s]
+Loading safetensors checkpoint shards:  29% Completed | 34/119 [00:01<00:03, 25.83it/s]
+Loading safetensors checkpoint shards:  32% Completed | 38/119 [00:01<00:02, 28.08it/s]
+Loading safetensors checkpoint shards:  35% Completed | 42/119 [00:01<00:02, 30.03it/s]
+Loading safetensors checkpoint shards:  39% Completed | 46/119 [00:01<00:02, 31.24it/s]
+Loading safetensors checkpoint shards:  42% Completed | 50/119 [00:01<00:02, 32.41it/s]
+Loading safetensors checkpoint shards:  45% Completed | 54/119 [00:01<00:01, 33.22it/s]
+Loading safetensors checkpoint shards:  49% Completed | 58/119 [00:01<00:01, 33.86it/s]
+Loading safetensors checkpoint shards:  52% Completed | 62/119 [00:02<00:03, 18.61it/s]
+Loading safetensors checkpoint shards:  55% Completed | 66/119 [00:02<00:02, 21.69it/s]
+Loading safetensors checkpoint shards:  59% Completed | 70/119 [00:02<00:02, 24.49it/s]
+Loading safetensors checkpoint shards:  62% Completed | 74/119 [00:02<00:01, 26.93it/s]
+Loading safetensors checkpoint shards:  66% Completed | 78/119 [00:02<00:01, 28.73it/s]
+Loading safetensors checkpoint shards:  69% Completed | 82/119 [00:02<00:01, 30.45it/s]
+Loading safetensors checkpoint shards:  72% Completed | 86/119 [00:03<00:01, 31.82it/s]
+Loading safetensors checkpoint shards:  76% Completed | 90/119 [00:03<00:00, 32.82it/s]
+Loading safetensors checkpoint shards:  79% Completed | 94/119 [00:03<00:00, 33.62it/s]
+Loading safetensors checkpoint shards:  82% Completed | 98/119 [00:03<00:00, 34.14it/s]
+Loading safetensors checkpoint shards:  86% Completed | 102/119 [00:03<00:00, 34.38it/s]
+Loading safetensors checkpoint shards:  89% Completed | 106/119 [00:03<00:00, 17.95it/s]
+Loading safetensors checkpoint shards:  92% Completed | 110/119 [00:04<00:00, 21.29it/s]
+Loading safetensors checkpoint shards:  96% Completed | 114/119 [00:04<00:00, 24.47it/s]
+Loading safetensors checkpoint shards:  99% Completed | 118/119 [00:04<00:00, 27.33it/s]
+Loading safetensors checkpoint shards: 100% Completed | 119/119 [00:04<00:00, 27.84it/s]
+
+[2026-01-29 00:54:33 TP0] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=20.21 GB, mem usage=73.87 GB.
+[2026-01-29 00:54:34 TP7] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=20.21 GB, mem usage=73.87 GB.
+[2026-01-29 00:54:35 TP3] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=20.21 GB, mem usage=73.87 GB.
+[2026-01-29 00:54:36 TP2] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=20.21 GB, mem usage=73.87 GB.
+[2026-01-29 00:54:36 TP6] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=20.21 GB, mem usage=73.87 GB.
+[2026-01-29 00:54:38 TP5] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=20.21 GB, mem usage=73.87 GB.
+[2026-01-29 00:54:43 TP1] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=20.21 GB, mem usage=73.87 GB.
+[2026-01-29 00:54:45 TP4] Load weight end. type=DeepseekV3ForCausalLM, dtype=torch.bfloat16, avail mem=20.21 GB, mem usage=73.87 GB.
+[2026-01-29 00:54:45 TP0] Using KV cache dtype: torch.float8_e4m3fn
+[2026-01-29 00:54:45 TP7] KV Cache is allocated. #tokens: 180182, KV size: 5.90 GB
+[2026-01-29 00:54:45 TP7] Memory pool end. avail mem=12.25 GB
+[2026-01-29 00:54:45 TP1] KV Cache is allocated. #tokens: 180182, KV size: 5.90 GB
+[2026-01-29 00:54:45 TP1] Memory pool end. avail mem=12.25 GB
+[2026-01-29 00:54:45 TP0] KV Cache is allocated. #tokens: 180182, KV size: 5.90 GB
+[2026-01-29 00:54:45 TP4] KV Cache is allocated. #tokens: 180182, KV size: 5.90 GB
+[2026-01-29 00:54:45 TP0] Memory pool end. avail mem=12.25 GB
+[2026-01-29 00:54:45 TP4] Memory pool end. avail mem=12.25 GB
+[2026-01-29 00:54:45 TP6] KV Cache is allocated. #tokens: 180182, KV size: 5.90 GB
+[2026-01-29 00:54:45 TP6] Memory pool end. avail mem=12.25 GB
+[2026-01-29 00:54:45 TP2] KV Cache is allocated. #tokens: 180182, KV size: 5.90 GB
+[2026-01-29 00:54:45 TP5] KV Cache is allocated. #tokens: 180182, KV size: 5.90 GB
+[2026-01-29 00:54:45 TP5] Memory pool end. avail mem=12.25 GB
+[2026-01-29 00:54:45 TP2] Memory pool end. avail mem=12.25 GB
+[2026-01-29 00:54:45 TP3] KV Cache is allocated. #tokens: 180182, KV size: 5.90 GB
+[2026-01-29 00:54:45 TP3] Memory pool end. avail mem=12.25 GB
+[2026-01-29 00:54:46 TP7] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:54:46 TP7] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+[2026-01-29 00:54:46 TP0] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:54:46 TP0] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+[2026-01-29 00:54:46 TP6] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:54:46 TP6] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+[2026-01-29 00:54:46 TP4] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:54:46 TP4] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+[2026-01-29 00:54:46 TP5] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:54:46 TP5] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+[2026-01-29 00:54:46 TP2] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:54:46 TP2] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+[2026-01-29 00:54:46 TP3] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:54:46 TP3] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+[2026-01-29 00:54:46 TP1] Reloaded tiktoken model from /workspace/.hf_home/hub/models--nvidia--Kimi-K2-Thinking-NVFP4/snapshots/0736493190d51b2590a0da089b316ce252d136b4/tiktoken.model
+[2026-01-29 00:54:46 TP1] #words: 163840 - BOS ID: 163584 - EOS ID: 163585
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+/workspace/sglang-pr16975/python/sglang/srt/utils/hf_transformers_utils.py:499: UserWarning: Using a slow tokenizer. This might cause a significant slowdown. Consider using a fast tokenizer instead.
+  warnings.warn(
+[2026-01-29 00:54:46 TP0] max_total_num_tokens=180182, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=2048, context_len=262144, available_gpu_mem=12.24 GB
+[2026-01-29 00:54:46] INFO:     Started server process [689088]
+[2026-01-29 00:54:46] INFO:     Waiting for application startup.
+[2026-01-29 00:54:46] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 1.0, 'top_k': 50, 'top_p': 1.0}
+[2026-01-29 00:54:46] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 1.0, 'top_k': 50, 'top_p': 1.0}
+[2026-01-29 00:54:46] INFO:     Application startup complete.
+[2026-01-29 00:54:46] INFO:     Uvicorn running on http://127.0.0.1:30000 (Press CTRL+C to quit)
+[2026-01-29 00:54:47] INFO:     127.0.0.1:54218 - "GET /model_info HTTP/1.1" 200 OK
+[2026-01-29 00:54:47 TP0] Prefill batch, #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-29 00:54:50] INFO:     127.0.0.1:54230 - "POST /generate HTTP/1.1" 200 OK
+[2026-01-29 00:54:50] The server is fired up and ready to roll!
+[2026-01-29 00:55:53 TP0] Prefill batch, #new-seq: 1, #new-token: 17, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-29 00:55:55 TP0] Decode batch, #running-req: 1, #token: 50, token usage: 0.00, cuda graph: False, gen throughput (token/s): 0.23, #queue-req: 0, 
+[2026-01-29 00:55:58 TP0] Decode batch, #running-req: 1, #token: 90, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.30, #queue-req: 0, 
+[2026-01-29 00:56:00 TP0] Decode batch, #running-req: 1, #token: 130, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.34, #queue-req: 0, 
+[2026-01-29 00:56:03] INFO:     127.0.0.1:37154 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-29 00:56:13] INFO:     127.0.0.1:53452 - "GET /v1/models HTTP/1.1" 200 OK
+[2026-01-29 00:56:17] INFO:     127.0.0.1:54888 - "POST /generate HTTP/1.1" 200 OK
+[2026-01-29 00:56:17 TP0] Prefill batch, #new-seq: 1, #new-token: 38, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-29 00:56:17 TP0] Decode batch, #running-req: 1, #token: 41, token usage: 0.00, cuda graph: False, gen throughput (token/s): 2.35, #queue-req: 0, 
+[2026-01-29 00:56:20] INFO:     127.0.0.1:54896 - "POST /generate HTTP/1.1" 200 OK
+[2026-01-29 00:56:20 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 37, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-29 00:56:20 TP6] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2853, in run_scheduler_process
+    scheduler.event_loop_overlap()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 1112, in event_loop_overlap
+    batch_result = self.run_batch(batch)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2187, in run_batch
+    batch_result = self.model_worker.forward_batch_generation(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/tp_worker.py", line 454, in forward_batch_generation
+    out = self.model_runner.forward(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2225, in forward
+    output = self._forward_raw(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2303, in _forward_raw
+    ret = self.forward_extend(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2164, in forward_extend
+    return self.model.forward(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3248, in forward
+    hidden_states = self.model(
+                    ^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3063, in forward
+    hidden_states, residual = layer(
+                              ^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 2737, in forward
+    hidden_states = self.self_attn(
+                    ^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1387, in forward
+    return self.forward_core(s)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1475, in forward_core
+    return self.forward_absorb_core(*inner_state)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1940, in forward_absorb_core
+    attn_output = self.attn_mqa(
+                  ^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/radix_attention.py", line 124, in forward
+    return forward_batch.attn_backend.forward(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/base_attn_backend.py", line 113, in forward
+    return self.forward_extend(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_backend.py", line 838, in forward_extend
+    self.extend_attention_fwd(
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_ops/extend_attention.py", line 597, in extend_attention_fwd
+    _fwd_kernel[grid](
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 419, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 756, in run
+    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 490, in launch_metadata
+    self._init_handles()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 464, in _init_handles
+    raise_(OutOfResources(self.metadata.shared, max_shared, "shared memory"))
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 456, in raise_
+    raise err
+triton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 106496, Hardware limit: 101376. Reducing block sizes or `num_stages` may help.
+
+[2026-01-29 00:56:20 TP4] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2853, in run_scheduler_process
+    scheduler.event_loop_overlap()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 1112, in event_loop_overlap
+    batch_result = self.run_batch(batch)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2187, in run_batch
+    batch_result = self.model_worker.forward_batch_generation(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/tp_worker.py", line 454, in forward_batch_generation
+    out = self.model_runner.forward(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2225, in forward
+    output = self._forward_raw(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2303, in _forward_raw
+    ret = self.forward_extend(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2164, in forward_extend
+    return self.model.forward(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3248, in forward
+    hidden_states = self.model(
+                    ^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3063, in forward
+    hidden_states, residual = layer(
+                              ^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 2737, in forward
+    hidden_states = self.self_attn(
+                    ^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1387, in forward
+    return self.forward_core(s)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1475, in forward_core
+    return self.forward_absorb_core(*inner_state)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1940, in forward_absorb_core
+    attn_output = self.attn_mqa(
+                  ^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/radix_attention.py", line 124, in forward
+    return forward_batch.attn_backend.forward(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/base_attn_backend.py", line 113, in forward
+    return self.forward_extend(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_backend.py", line 838, in forward_extend
+    self.extend_attention_fwd(
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_ops/extend_attention.py", line 597, in extend_attention_fwd
+    _fwd_kernel[grid](
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 419, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 756, in run
+    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 490, in launch_metadata
+    self._init_handles()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 464, in _init_handles
+    raise_(OutOfResources(self.metadata.shared, max_shared, "shared memory"))
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 456, in raise_
+    raise err
+triton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 106496, Hardware limit: 101376. Reducing block sizes or `num_stages` may help.
+
+[2026-01-29 00:56:20] SIGQUIT received. signum=None, frame=None. It usually means one child failed.
+[2026-01-29 00:56:20 TP7] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2853, in run_scheduler_process
+    scheduler.event_loop_overlap()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 1112, in event_loop_overlap
+    batch_result = self.run_batch(batch)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2187, in run_batch
+    batch_result = self.model_worker.forward_batch_generation(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/tp_worker.py", line 454, in forward_batch_generation
+    out = self.model_runner.forward(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2225, in forward
+    output = self._forward_raw(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2303, in _forward_raw
+    ret = self.forward_extend(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2164, in forward_extend
+    return self.model.forward(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3248, in forward
+    hidden_states = self.model(
+                    ^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3063, in forward
+    hidden_states, residual = layer(
+                              ^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 2737, in forward
+    hidden_states = self.self_attn(
+                    ^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1387, in forward
+    return self.forward_core(s)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1475, in forward_core
+    return self.forward_absorb_core(*inner_state)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1940, in forward_absorb_core
+    attn_output = self.attn_mqa(
+                  ^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/radix_attention.py", line 124, in forward
+    return forward_batch.attn_backend.forward(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/base_attn_backend.py", line 113, in forward
+    return self.forward_extend(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_backend.py", line 838, in forward_extend
+    self.extend_attention_fwd(
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_ops/extend_attention.py", line 597, in extend_attention_fwd
+    _fwd_kernel[grid](
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 419, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 756, in run
+    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 490, in launch_metadata
+    self._init_handles()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 464, in _init_handles
+    raise_(OutOfResources(self.metadata.shared, max_shared, "shared memory"))
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 456, in raise_
+    raise err
+triton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 106496, Hardware limit: 101376. Reducing block sizes or `num_stages` may help.
+
+[2026-01-29 00:56:20 TP1] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2853, in run_scheduler_process
+    scheduler.event_loop_overlap()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 1112, in event_loop_overlap
+    batch_result = self.run_batch(batch)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2187, in run_batch
+    batch_result = self.model_worker.forward_batch_generation(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/tp_worker.py", line 454, in forward_batch_generation
+    out = self.model_runner.forward(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2225, in forward
+    output = self._forward_raw(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2303, in _forward_raw
+    ret = self.forward_extend(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2164, in forward_extend
+    return self.model.forward(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3248, in forward
+    hidden_states = self.model(
+                    ^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3063, in forward
+    hidden_states, residual = layer(
+                              ^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 2737, in forward
+    hidden_states = self.self_attn(
+                    ^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1387, in forward
+    return self.forward_core(s)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1475, in forward_core
+    return self.forward_absorb_core(*inner_state)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1940, in forward_absorb_core
+    attn_output = self.attn_mqa(
+                  ^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/radix_attention.py", line 124, in forward
+    return forward_batch.attn_backend.forward(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/base_attn_backend.py", line 113, in forward
+    return self.forward_extend(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_backend.py", line 838, in forward_extend
+    self.extend_attention_fwd(
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_ops/extend_attention.py", line 597, in extend_attention_fwd
+    _fwd_kernel[grid](
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 419, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 756, in run
+    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 490, in launch_metadata
+    self._init_handles()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 464, in _init_handles
+    raise_(OutOfResources(self.metadata.shared, max_shared, "shared memory"))
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 456, in raise_
+    raise err
+triton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 106496, Hardware limit: 101376. Reducing block sizes or `num_stages` may help.
+
+[2026-01-29 00:56:20 TP2] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2853, in run_scheduler_process
+    scheduler.event_loop_overlap()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 1112, in event_loop_overlap
+    batch_result = self.run_batch(batch)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2187, in run_batch
+    batch_result = self.model_worker.forward_batch_generation(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/tp_worker.py", line 454, in forward_batch_generation
+    out = self.model_runner.forward(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2225, in forward
+    output = self._forward_raw(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2303, in _forward_raw
+    ret = self.forward_extend(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2164, in forward_extend
+    return self.model.forward(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3248, in forward
+    hidden_states = self.model(
+                    ^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3063, in forward
+    hidden_states, residual = layer(
+                              ^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 2737, in forward
+    hidden_states = self.self_attn(
+                    ^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1387, in forward
+    return self.forward_core(s)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1475, in forward_core
+    return self.forward_absorb_core(*inner_state)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1940, in forward_absorb_core
+    attn_output = self.attn_mqa(
+                  ^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/radix_attention.py", line 124, in forward
+    return forward_batch.attn_backend.forward(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/base_attn_backend.py", line 113, in forward
+    return self.forward_extend(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_backend.py", line 838, in forward_extend
+    self.extend_attention_fwd(
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_ops/extend_attention.py", line 597, in extend_attention_fwd
+    _fwd_kernel[grid](
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 419, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 756, in run
+    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 490, in launch_metadata
+    self._init_handles()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 464, in _init_handles
+    raise_(OutOfResources(self.metadata.shared, max_shared, "shared memory"))
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 456, in raise_
+    raise err
+triton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 106496, Hardware limit: 101376. Reducing block sizes or `num_stages` may help.
+
+[2026-01-29 00:56:20 TP5] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2853, in run_scheduler_process
+    scheduler.event_loop_overlap()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 1112, in event_loop_overlap
+    batch_result = self.run_batch(batch)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2187, in run_batch
+    batch_result = self.model_worker.forward_batch_generation(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/tp_worker.py", line 454, in forward_batch_generation
+    out = self.model_runner.forward(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2225, in forward
+    output = self._forward_raw(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2303, in _forward_raw
+    ret = self.forward_extend(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2164, in forward_extend
+    return self.model.forward(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3248, in forward
+    hidden_states = self.model(
+                    ^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3063, in forward
+    hidden_states, residual = layer(
+                              ^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 2737, in forward
+    hidden_states = self.self_attn(
+                    ^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1387, in forward
+    return self.forward_core(s)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1475, in forward_core
+    return self.forward_absorb_core(*inner_state)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1940, in forward_absorb_core
+    attn_output = self.attn_mqa(
+                  ^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/radix_attention.py", line 124, in forward
+    return forward_batch.attn_backend.forward(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/base_attn_backend.py", line 113, in forward
+    return self.forward_extend(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_backend.py", line 838, in forward_extend
+    self.extend_attention_fwd(
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_ops/extend_attention.py", line 597, in extend_attention_fwd
+    _fwd_kernel[grid](
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 419, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 756, in run
+    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 490, in launch_metadata
+    self._init_handles()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 464, in _init_handles
+    raise_(OutOfResources(self.metadata.shared, max_shared, "shared memory"))
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 456, in raise_
+    raise err
+triton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 106496, Hardware limit: 101376. Reducing block sizes or `num_stages` may help.
+
+[2026-01-29 00:56:20 TP0] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2853, in run_scheduler_process
+    scheduler.event_loop_overlap()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 1112, in event_loop_overlap
+    batch_result = self.run_batch(batch)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2187, in run_batch
+    batch_result = self.model_worker.forward_batch_generation(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/tp_worker.py", line 454, in forward_batch_generation
+    out = self.model_runner.forward(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2225, in forward
+    output = self._forward_raw(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2303, in _forward_raw
+    ret = self.forward_extend(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2164, in forward_extend
+    return self.model.forward(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3248, in forward
+    hidden_states = self.model(
+                    ^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3063, in forward
+    hidden_states, residual = layer(
+                              ^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 2737, in forward
+    hidden_states = self.self_attn(
+                    ^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1387, in forward
+    return self.forward_core(s)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1475, in forward_core
+    return self.forward_absorb_core(*inner_state)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1940, in forward_absorb_core
+    attn_output = self.attn_mqa(
+                  ^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/radix_attention.py", line 124, in forward
+    return forward_batch.attn_backend.forward(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/base_attn_backend.py", line 113, in forward
+    return self.forward_extend(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_backend.py", line 838, in forward_extend
+    self.extend_attention_fwd(
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_ops/extend_attention.py", line 597, in extend_attention_fwd
+    _fwd_kernel[grid](
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 419, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 756, in run
+    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 490, in launch_metadata
+    self._init_handles()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 464, in _init_handles
+    raise_(OutOfResources(self.metadata.shared, max_shared, "shared memory"))
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 456, in raise_
+    raise err
+triton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 106496, Hardware limit: 101376. Reducing block sizes or `num_stages` may help.
+
+[2026-01-29 00:56:20 TP3] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2853, in run_scheduler_process
+    scheduler.event_loop_overlap()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 1112, in event_loop_overlap
+    batch_result = self.run_batch(batch)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2187, in run_batch
+    batch_result = self.model_worker.forward_batch_generation(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/tp_worker.py", line 454, in forward_batch_generation
+    out = self.model_runner.forward(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2225, in forward
+    output = self._forward_raw(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2303, in _forward_raw
+    ret = self.forward_extend(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2164, in forward_extend
+    return self.model.forward(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3248, in forward
+    hidden_states = self.model(
+                    ^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 3063, in forward
+    hidden_states, residual = layer(
+                              ^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 2737, in forward
+    hidden_states = self.self_attn(
+                    ^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1387, in forward
+    return self.forward_core(s)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1475, in forward_core
+    return self.forward_absorb_core(*inner_state)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/deepseek_v2.py", line 1940, in forward_absorb_core
+    attn_output = self.attn_mqa(
+                  ^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/radix_attention.py", line 124, in forward
+    return forward_batch.attn_backend.forward(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/base_attn_backend.py", line 113, in forward
+    return self.forward_extend(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_backend.py", line 838, in forward_extend
+    self.extend_attention_fwd(
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/attention/triton_ops/extend_attention.py", line 597, in extend_attention_fwd
+    _fwd_kernel[grid](
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 419, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 756, in run
+    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 490, in launch_metadata
+    self._init_handles()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 464, in _init_handles
+    raise_(OutOfResources(self.metadata.shared, max_shared, "shared memory"))
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 456, in raise_
+    raise err
+triton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 106496, Hardware limit: 101376. Reducing block sizes or `num_stages` may help.
+

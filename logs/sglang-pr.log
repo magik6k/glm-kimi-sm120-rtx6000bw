@@ -1,0 +1,381 @@
+[2026-01-28 21:16:53] WARNING model_config.py:801: DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:16:53] INFO server_args.py:1650: Attention backend not specified. Use flashinfer backend by default.
+[2026-01-28 21:16:54] server_args=ServerArgs(model_path='zai-org/GLM-4.7-FP8', tokenizer_path='zai-org/GLM-4.7-FP8', tokenizer_mode='auto', tokenizer_worker_num=1, skip_tokenizer_init=False, load_format='auto', model_loader_extra_config='{}', trust_remote_code=True, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl='auto', host='127.0.0.1', port=30000, fastapi_root_path='', grpc_mode=False, skip_server_warmup=False, warmups=None, nccl_port=None, checkpoint_engine_wait_weights_before_ready=False, dtype='auto', quantization=None, quantization_param_path=None, kv_cache_dtype='auto', enable_fp32_lm_head=False, modelopt_quant=None, modelopt_checkpoint_restore_path=None, modelopt_checkpoint_save_path=None, modelopt_export_path=None, quantize_and_serve=False, rl_quant_profile=None, mem_fraction_static=0.848, max_running_requests=None, max_queued_requests=None, max_total_tokens=None, chunked_prefill_size=8192, enable_dynamic_chunking=False, max_prefill_tokens=16384, prefill_max_requests=None, schedule_policy='fcfs', enable_priority_scheduling=False, abort_on_priority_when_disabled=False, schedule_low_priority_values_first=False, priority_scheduling_preemption_threshold=10, schedule_conservativeness=1.0, page_size=1, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, radix_eviction_policy='lru', enable_prefill_delayer=False, prefill_delayer_max_delay_passes=30, prefill_delayer_token_usage_low_watermark=None, prefill_delayer_forward_passes_buckets=None, prefill_delayer_wait_seconds_buckets=None, device='cuda', tp_size=8, pp_size=1, pp_max_micro_batch_size=None, pp_async_batch_depth=0, stream_interval=1, stream_output=False, random_seed=348328244, constrained_json_whitespace_pattern=None, constrained_json_disable_any_whitespace=False, watchdog_timeout=300, soft_watchdog_timeout=None, dist_timeout=None, download_dir=None, model_checksum=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, custom_sigquit_handler=None, log_level='info', log_level_http=None, log_requests=False, log_requests_level=2, log_requests_format='text', log_requests_target=None, crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_metrics_for_all_schedulers=False, tokenizer_metrics_custom_labels_header='x-custom-labels', tokenizer_metrics_allowed_custom_labels=None, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, prompt_tokens_buckets=None, generation_tokens_buckets=None, gc_warning_threshold_secs=0.0, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, enable_trace=False, otlp_traces_endpoint='localhost:4317', export_metrics_to_file=False, export_metrics_to_file_dir=None, api_key=None, served_model_name='zai-org/GLM-4.7-FP8', weight_version='default', chat_template=None, completion_template=None, file_storage_path='sglang_storage', enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, tool_server=None, sampling_defaults='model', dp_size=1, load_balance_method='round_robin', dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args='{}', preferred_sampling_params=None, enable_lora=None, max_lora_rank=None, lora_target_modules=None, lora_paths=None, max_loaded_loras=None, max_loras_per_batch=8, lora_eviction_policy='lru', lora_backend='csgmv', max_lora_chunk_size=16, attention_backend='flashinfer', decode_attention_backend=None, prefill_attention_backend=None, sampling_backend='flashinfer', grammar_backend='xgrammar', mm_attention_backend=None, fp8_gemm_runner_backend='auto', nsa_prefill_backend='flashmla_sparse', nsa_decode_backend='fa3', disable_flashinfer_autotune=False, speculative_algorithm=None, speculative_draft_model_path=None, speculative_draft_model_revision=None, speculative_draft_load_format=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, speculative_attention_mode='prefill', speculative_draft_attention_backend=None, speculative_moe_runner_backend='auto', speculative_moe_a2a_backend=None, speculative_draft_model_quantization=None, speculative_ngram_min_match_window_size=1, speculative_ngram_max_match_window_size=12, speculative_ngram_min_bfs_breadth=1, speculative_ngram_max_bfs_breadth=10, speculative_ngram_match_type='BFS', speculative_ngram_branch_length=18, speculative_ngram_capacity=10000000, enable_multi_layer_eagle=False, ep_size=1, moe_a2a_backend='none', moe_runner_backend='auto', flashinfer_mxfp4_moe_precision='default', enable_flashinfer_allreduce_fusion=False, deepep_mode='auto', ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location='trivial', enable_eplb=False, eplb_algorithm='auto', eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, eplb_min_rebalancing_utilization_threshold=1.0, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, elastic_ep_backend=None, mooncake_ib_device=None, max_mamba_cache_size=None, mamba_ssm_dtype='float32', mamba_full_memory_ratio=0.9, mamba_scheduler_strategy='no_buffer', mamba_track_interval=256, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy='write_through', hicache_io_backend='kernel', hicache_mem_layout='layer_first', hicache_storage_backend=None, hicache_storage_prefetch_policy='best_effort', hicache_storage_backend_extra_config=None, hierarchical_sparse_attention_extra_config=None, enable_lmcache=False, kt_weight_path=None, kt_method='AMXINT4', kt_cpuinfer=None, kt_threadpool_count=2, kt_num_gpu_experts=None, kt_max_deferred_experts_per_token=None, dllm_algorithm=None, dllm_algorithm_config=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type='qk', ds_sparse_decode_threshold=4096, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode='cpu', multi_item_scoring_delimiter=None, disable_radix_cache=False, cuda_graph_max_bs=512, cuda_graph_bs=[1, 2, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_layerwise_nvtx_marker=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_tokenizer_batch_decode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, enable_torch_symm_mem=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_single_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, enable_piecewise_cuda_graph=False, enable_torch_compile_debug_mode=False, torch_compile_max_bs=32, piecewise_cuda_graph_max_tokens=8192, piecewise_cuda_graph_tokens=[4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 640, 704, 768, 832, 896, 960, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4608, 5120, 5632, 6144, 6656, 7168, 7680, 8192], piecewise_cuda_graph_compiler='eager', torchao_config='', enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, triton_attention_split_tile_size=None, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, enable_weights_cpu_backup=False, enable_draft_weights_cpu_backup=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, keep_mm_feature_on_device=False, enable_return_hidden_states=False, enable_return_routed_experts=False, scheduler_recv_interval=1, numa_node=None, enable_deterministic_inference=False, rl_on_policy_target=None, enable_attn_tp_input_scattered=False, enable_nsa_prefill_context_parallel=False, nsa_prefill_cp_mode='in-seq-split', enable_fused_qk_norm_rope=False, enable_precise_embedding_interpolation=False, enable_dynamic_batch_tokenizer=False, dynamic_batch_tokenizer_batch_size=32, dynamic_batch_tokenizer_batch_timeout=0.002, debug_tensor_dump_output_folder=None, debug_tensor_dump_layers=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode='null', disaggregation_transfer_backend='mooncake', disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, disaggregation_decode_enable_offload_kvcache=False, disaggregation_decode_enable_fake_auto=False, num_reserved_decode_tokens=512, disaggregation_decode_polling_interval=1, encoder_only=False, language_only=False, encoder_transfer_backend='zmq_to_scheduler', encoder_urls=[], custom_weight_loader=[], weight_loader_disable_mmap=False, remote_instance_weight_loader_seed_instance_ip=None, remote_instance_weight_loader_seed_instance_service_port=None, remote_instance_weight_loader_send_weights_group_ports=None, remote_instance_weight_loader_backend='nccl', remote_instance_weight_loader_start_seed_via_transfer_engine=False, enable_pdmux=False, pdmux_config_path=None, sm_group_num=8, mm_max_concurrent_calls=32, mm_per_request_timeout=10.0, enable_broadcast_mm_inputs_process=False, enable_prefix_mm_cache=False, mm_enable_dp_encoder=False, mm_process_config={}, limit_mm_data_per_request=None, decrypted_config_file=None, decrypted_draft_config_file=None, forward_hooks=None)
+[2026-01-28 21:16:54] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:16:54] Using default HuggingFace chat template with detected content format: openai
+[2026-01-28 21:17:05 TP0] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:05 TP0] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:05 TP0] Init torch distributed begin.
+[2026-01-28 21:17:06 TP3] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:07 TP4] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:07 TP5] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:07 TP2] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:07 TP1] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:07 TP3] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:07 TP3] Init torch distributed begin.
+[2026-01-28 21:17:07 TP6] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:07 TP7] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:07 TP4] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:07 TP4] Init torch distributed begin.
+[2026-01-28 21:17:07 TP5] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:07 TP5] Init torch distributed begin.
+[2026-01-28 21:17:07 TP2] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:07 TP2] Init torch distributed begin.
+[2026-01-28 21:17:07 TP1] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:07 TP1] Init torch distributed begin.
+[2026-01-28 21:17:08 TP6] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:08 TP6] Init torch distributed begin.
+[2026-01-28 21:17:08 TP7] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 21:17:08 TP7] Init torch distributed begin.
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. [Gloo] Rank Expected number of connected peer ranks is : 47 is connected to 
+7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[2026-01-28 21:17:08 TP0] sglang is using nccl==2.27.5
+[2026-01-28 21:17:09 TP4] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-28 21:17:09 TP5] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-28 21:17:09 TP3] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-28 21:17:09 TP2] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-28 21:17:09 TP0] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-28 21:17:09 TP6] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-28 21:17:09 TP7] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-28 21:17:09 TP1] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank [Gloo] Rank 00[Gloo] Rank  is connected to  is connected to 000 is connected to  peer ranks.  peer ranks. 0Expected number of connected peer ranks is : Expected number of connected peer ranks is :  peer ranks. 0[Gloo] Rank 0Expected number of connected peer ranks is : 
+0
+0[Gloo] Rank  is connected to 
+0[Gloo] Rank 0[Gloo] Rank  is connected to  peer ranks. 000Expected number of connected peer ranks is :  is connected to  is connected to  peer ranks. 000Expected number of connected peer ranks is : 
+ peer ranks.  peer ranks. 0Expected number of connected peer ranks is : Expected number of connected peer ranks is : 
+00
+
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank [Gloo] Rank 64 is connected to  is connected to 77 peer ranks.  peer ranks. Expected number of connected peer ranks is : Expected number of connected peer ranks is : 77
+
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 5 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[2026-01-28 21:17:09 TP0] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-28 21:17:09 TP7] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-28 21:17:09 TP6] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-28 21:17:09 TP5] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-28 21:17:09 TP4] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-28 21:17:09 TP3] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-28 21:17:09 TP2] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-28 21:17:09 TP1] Init torch distributed ends. mem usage=0.28 GB
+[2026-01-28 21:17:09 TP4] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 21:17:09 TP6] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 21:17:09 TP2] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 21:17:09 TP3] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 21:17:09 TP7] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 21:17:09 TP1] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 21:17:09 TP5] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 21:17:09 TP0] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 21:17:10 TP0] Load weight begin. avail mem=94.13 GB
+[2026-01-28 21:17:10 TP0] Shared experts fusion optimization enabled.
+[2026-01-28 21:17:10 TP6] Load weight begin. avail mem=94.13 GB
+[2026-01-28 21:17:10 TP5] Load weight begin. avail mem=94.13 GB
+[2026-01-28 21:17:10 TP4] Load weight begin. avail mem=94.13 GB
+[2026-01-28 21:17:10 TP0] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 21:17:10 TP6] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 21:17:10 TP5] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 21:17:10 TP4] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 21:17:10 TP2] Load weight begin. avail mem=94.13 GB
+[2026-01-28 21:17:10 TP2] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 21:17:10 TP3] Load weight begin. avail mem=94.13 GB
+[2026-01-28 21:17:10 TP3] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 21:17:10 TP7] Load weight begin. avail mem=94.13 GB
+[2026-01-28 21:17:10 TP1] Load weight begin. avail mem=94.13 GB
+[2026-01-28 21:17:10 TP7] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 21:17:10 TP1] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 21:17:11 TP0] Found local HF snapshot for zai-org/GLM-4.7-FP8 at /workspace/.hf_home/hub/models--zai-org--GLM-4.7-FP8/snapshots/7b3b5f81eee81be12a6f8da2710eac4bafb0166a; skipping download.
+Loading safetensors checkpoint shards:   0% Completed | 0/93 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:   4% Completed | 4/93 [00:00<00:06, 14.39it/s]
+Loading safetensors checkpoint shards:   6% Completed | 6/93 [00:00<00:12,  6.88it/s]
+Loading safetensors checkpoint shards:   8% Completed | 7/93 [00:01<00:14,  5.86it/s]
+Loading safetensors checkpoint shards:   9% Completed | 8/93 [00:01<00:16,  5.24it/s]
+Loading safetensors checkpoint shards:  10% Completed | 9/93 [00:01<00:17,  4.82it/s]
+Loading safetensors checkpoint shards:  11% Completed | 10/93 [00:01<00:18,  4.53it/s]
+Loading safetensors checkpoint shards:  12% Completed | 11/93 [00:02<00:18,  4.33it/s]
+Loading safetensors checkpoint shards:  13% Completed | 12/93 [00:02<00:19,  4.18it/s]
+Loading safetensors checkpoint shards:  14% Completed | 13/93 [00:02<00:19,  4.08it/s]
+Loading safetensors checkpoint shards:  15% Completed | 14/93 [00:02<00:19,  4.04it/s]
+Loading safetensors checkpoint shards:  16% Completed | 15/93 [00:03<00:19,  3.97it/s]
+Loading safetensors checkpoint shards:  17% Completed | 16/93 [00:03<00:19,  3.93it/s]
+Loading safetensors checkpoint shards:  18% Completed | 17/93 [00:03<00:19,  3.90it/s]
+Loading safetensors checkpoint shards:  19% Completed | 18/93 [00:03<00:19,  3.87it/s]
+Loading safetensors checkpoint shards:  20% Completed | 19/93 [00:04<00:19,  3.84it/s]
+Loading safetensors checkpoint shards:  22% Completed | 20/93 [00:04<00:19,  3.83it/s]
+Loading safetensors checkpoint shards:  23% Completed | 21/93 [00:04<00:18,  3.81it/s]
+Loading safetensors checkpoint shards:  24% Completed | 22/93 [00:04<00:18,  3.80it/s]
+Loading safetensors checkpoint shards:  25% Completed | 23/93 [00:05<00:18,  3.80it/s]
+Loading safetensors checkpoint shards:  26% Completed | 24/93 [00:05<00:18,  3.80it/s]
+Loading safetensors checkpoint shards:  27% Completed | 25/93 [00:05<00:17,  3.80it/s]
+Loading safetensors checkpoint shards:  28% Completed | 26/93 [00:05<00:17,  3.82it/s]
+Loading safetensors checkpoint shards:  29% Completed | 27/93 [00:06<00:17,  3.81it/s]
+Loading safetensors checkpoint shards:  30% Completed | 28/93 [00:06<00:17,  3.81it/s]
+Loading safetensors checkpoint shards:  31% Completed | 29/93 [00:06<00:16,  3.83it/s]
+Loading safetensors checkpoint shards:  32% Completed | 30/93 [00:07<00:16,  3.82it/s]
+Loading safetensors checkpoint shards:  33% Completed | 31/93 [00:07<00:16,  3.81it/s]
+Loading safetensors checkpoint shards:  34% Completed | 32/93 [00:07<00:16,  3.81it/s]
+Loading safetensors checkpoint shards:  35% Completed | 33/93 [00:07<00:15,  3.81it/s]
+Loading safetensors checkpoint shards:  37% Completed | 34/93 [00:08<00:15,  3.82it/s]
+Loading safetensors checkpoint shards:  38% Completed | 35/93 [00:08<00:15,  3.82it/s]
+Loading safetensors checkpoint shards:  39% Completed | 36/93 [00:08<00:14,  3.82it/s]
+Loading safetensors checkpoint shards:  40% Completed | 37/93 [00:08<00:14,  3.84it/s]
+Loading safetensors checkpoint shards:  41% Completed | 38/93 [00:09<00:14,  3.83it/s]
+Loading safetensors checkpoint shards:  42% Completed | 39/93 [00:09<00:14,  3.82it/s]
+Loading safetensors checkpoint shards:  43% Completed | 40/93 [00:09<00:13,  3.82it/s]
+Loading safetensors checkpoint shards:  44% Completed | 41/93 [00:09<00:13,  3.81it/s]
+Loading safetensors checkpoint shards:  45% Completed | 42/93 [00:10<00:13,  3.82it/s]
+Loading safetensors checkpoint shards:  46% Completed | 43/93 [00:10<00:13,  3.82it/s]
+Loading safetensors checkpoint shards:  47% Completed | 44/93 [00:10<00:12,  3.82it/s]
+Loading safetensors checkpoint shards:  48% Completed | 45/93 [00:10<00:12,  3.82it/s]
+Loading safetensors checkpoint shards:  49% Completed | 46/93 [00:11<00:12,  3.82it/s]
+Loading safetensors checkpoint shards:  51% Completed | 47/93 [00:11<00:12,  3.82it/s]
+Loading safetensors checkpoint shards:  52% Completed | 48/93 [00:11<00:11,  3.82it/s]
+Loading safetensors checkpoint shards:  53% Completed | 49/93 [00:12<00:11,  3.83it/s]
+Loading safetensors checkpoint shards:  54% Completed | 50/93 [00:12<00:11,  3.83it/s]
+Loading safetensors checkpoint shards:  55% Completed | 51/93 [00:12<00:10,  3.83it/s]
+Loading safetensors checkpoint shards:  56% Completed | 52/93 [00:12<00:10,  3.83it/s]
+Loading safetensors checkpoint shards:  57% Completed | 53/93 [00:13<00:10,  3.86it/s]
+Loading safetensors checkpoint shards:  58% Completed | 54/93 [00:13<00:10,  3.85it/s]
+Loading safetensors checkpoint shards:  59% Completed | 55/93 [00:13<00:09,  3.84it/s]
+Loading safetensors checkpoint shards:  60% Completed | 56/93 [00:13<00:09,  3.84it/s]
+Loading safetensors checkpoint shards:  61% Completed | 57/93 [00:14<00:09,  3.84it/s]
+Loading safetensors checkpoint shards:  62% Completed | 58/93 [00:14<00:09,  3.84it/s]
+Loading safetensors checkpoint shards:  63% Completed | 59/93 [00:14<00:08,  3.84it/s]
+Loading safetensors checkpoint shards:  65% Completed | 60/93 [00:14<00:08,  3.81it/s]
+Loading safetensors checkpoint shards:  66% Completed | 61/93 [00:15<00:08,  3.84it/s]
+Loading safetensors checkpoint shards:  67% Completed | 62/93 [00:15<00:08,  3.83it/s]
+Loading safetensors checkpoint shards:  68% Completed | 63/93 [00:15<00:07,  3.82it/s]
+Loading safetensors checkpoint shards:  69% Completed | 64/93 [00:15<00:07,  3.85it/s]
+Loading safetensors checkpoint shards:  70% Completed | 65/93 [00:16<00:07,  3.86it/s]
+Loading safetensors checkpoint shards:  71% Completed | 66/93 [00:16<00:07,  3.85it/s]
+Loading safetensors checkpoint shards:  72% Completed | 67/93 [00:16<00:06,  3.81it/s]
+Loading safetensors checkpoint shards:  73% Completed | 68/93 [00:16<00:06,  3.82it/s]
+Loading safetensors checkpoint shards:  74% Completed | 69/93 [00:17<00:06,  3.82it/s]
+Loading safetensors checkpoint shards:  75% Completed | 70/93 [00:17<00:06,  3.82it/s]
+Loading safetensors checkpoint shards:  76% Completed | 71/93 [00:17<00:05,  3.82it/s]
+Loading safetensors checkpoint shards:  77% Completed | 72/93 [00:18<00:05,  3.85it/s]
+Loading safetensors checkpoint shards:  78% Completed | 73/93 [00:18<00:05,  3.84it/s]
+Loading safetensors checkpoint shards:  80% Completed | 74/93 [00:18<00:04,  3.86it/s]
+Loading safetensors checkpoint shards:  81% Completed | 75/93 [00:18<00:04,  3.88it/s]
+Loading safetensors checkpoint shards:  82% Completed | 76/93 [00:19<00:04,  3.85it/s]
+Loading safetensors checkpoint shards:  83% Completed | 77/93 [00:19<00:04,  3.85it/s]
+Loading safetensors checkpoint shards:  84% Completed | 78/93 [00:19<00:03,  3.85it/s]
+Loading safetensors checkpoint shards:  85% Completed | 79/93 [00:19<00:03,  3.84it/s]
+Loading safetensors checkpoint shards:  87% Completed | 81/93 [00:20<00:02,  4.91it/s]
+Loading safetensors checkpoint shards:  88% Completed | 82/93 [00:20<00:02,  4.58it/s]
+Loading safetensors checkpoint shards:  89% Completed | 83/93 [00:20<00:02,  4.35it/s]
+Loading safetensors checkpoint shards:  90% Completed | 84/93 [00:20<00:02,  4.20it/s]
+Loading safetensors checkpoint shards:  91% Completed | 85/93 [00:21<00:01,  4.11it/s]
+Loading safetensors checkpoint shards:  92% Completed | 86/93 [00:21<00:01,  4.02it/s]
+Loading safetensors checkpoint shards:  94% Completed | 87/93 [00:21<00:01,  3.96it/s]
+Loading safetensors checkpoint shards:  95% Completed | 88/93 [00:21<00:01,  3.92it/s]
+Loading safetensors checkpoint shards:  96% Completed | 89/93 [00:22<00:01,  3.87it/s]
+Loading safetensors checkpoint shards:  97% Completed | 90/93 [00:22<00:00,  3.86it/s]
+[2026-01-28 21:17:33 TP2] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=52.22 GB, mem usage=41.90 GB.
+Loading safetensors checkpoint shards:  98% Completed | 91/93 [00:22<00:00,  3.85it/s]
+Loading safetensors checkpoint shards:  99% Completed | 92/93 [00:22<00:00,  3.85it/s]
+Loading safetensors checkpoint shards: 100% Completed | 93/93 [00:23<00:00,  3.80it/s]
+Loading safetensors checkpoint shards: 100% Completed | 93/93 [00:23<00:00,  4.00it/s]
+
+[2026-01-28 21:17:34 TP0] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=52.22 GB, mem usage=41.90 GB.
+[2026-01-28 21:17:34 TP3] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=52.22 GB, mem usage=41.90 GB.
+[2026-01-28 21:17:35 TP4] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=52.22 GB, mem usage=41.90 GB.
+[2026-01-28 21:17:35 TP7] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=52.22 GB, mem usage=41.90 GB.
+[2026-01-28 21:17:35 TP5] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=52.22 GB, mem usage=41.90 GB.
+[2026-01-28 21:17:39 TP6] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=52.22 GB, mem usage=41.90 GB.
+[2026-01-28 21:17:40 TP1] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=52.22 GB, mem usage=41.90 GB.
+[2026-01-28 21:17:40 TP0] Using KV cache dtype: torch.bfloat16
+[2026-01-28 21:17:40 TP5] KV Cache is allocated. #tokens: 864247, K size: 18.96 GB, V size: 18.96 GB
+[2026-01-28 21:17:40 TP5] Memory pool end. avail mem=12.48 GB
+[2026-01-28 21:17:40 TP0] KV Cache is allocated. #tokens: 864247, K size: 18.96 GB, V size: 18.96 GB
+[2026-01-28 21:17:40 TP0] Memory pool end. avail mem=12.48 GB
+[2026-01-28 21:17:40 TP2] KV Cache is allocated. #tokens: 864247, K size: 18.96 GB, V size: 18.96 GB
+[2026-01-28 21:17:40 TP2] Memory pool end. avail mem=12.48 GB
+[2026-01-28 21:17:40 TP7] KV Cache is allocated. #tokens: 864247, K size: 18.96 GB, V size: 18.96 GB
+[2026-01-28 21:17:40 TP7] Memory pool end. avail mem=12.48 GB
+[2026-01-28 21:17:40 TP1] KV Cache is allocated. #tokens: 864247, K size: 18.96 GB, V size: 18.96 GB
+[2026-01-28 21:17:40 TP1] Memory pool end. avail mem=12.48 GB
+[2026-01-28 21:17:40 TP3] KV Cache is allocated. #tokens: 864247, K size: 18.96 GB, V size: 18.96 GB
+[2026-01-28 21:17:40 TP3] Memory pool end. avail mem=12.48 GB
+[2026-01-28 21:17:40 TP6] KV Cache is allocated. #tokens: 864247, K size: 18.96 GB, V size: 18.96 GB
+[2026-01-28 21:17:40 TP6] Memory pool end. avail mem=12.48 GB
+[2026-01-28 21:17:40 TP4] KV Cache is allocated. #tokens: 864247, K size: 18.96 GB, V size: 18.96 GB
+[2026-01-28 21:17:40 TP4] Memory pool end. avail mem=12.48 GB
+[2026-01-28 21:18:11 TP0] max_total_num_tokens=864247, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=2182, context_len=202752, available_gpu_mem=12.00 GB
+[2026-01-28 21:18:12] INFO:     Started server process [82537]
+[2026-01-28 21:18:12] INFO:     Waiting for application startup.
+[2026-01-28 21:18:12] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 1.0, 'top_k': 50, 'top_p': 1.0}
+[2026-01-28 21:18:12] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 1.0, 'top_k': 50, 'top_p': 1.0}
+[2026-01-28 21:18:12] INFO:     Application startup complete.
+[2026-01-28 21:18:12] INFO:     Uvicorn running on http://127.0.0.1:30000 (Press CTRL+C to quit)
+[2026-01-28 21:18:13] INFO:     127.0.0.1:55628 - "GET /model_info HTTP/1.1" 200 OK
+[2026-01-28 21:18:13 TP0] Prefill batch, #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 21:18:41 TP5] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:41 TP5] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:41 TP1] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:41 TP1] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:41 TP2] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:41 TP2] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:41 TP0] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:41 TP0] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:41 TP6] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:41 TP6] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:41 TP3] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:41 TP3] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:41 TP7] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:41 TP7] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:41 TP4] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:41 TP4] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=192,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 21:18:45] INFO:     127.0.0.1:55644 - "POST /generate HTTP/1.1" 200 OK
+[2026-01-28 21:18:45] The server is fired up and ready to roll!
+[2026-01-28 21:19:21 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 21:19:22] INFO:     127.0.0.1:40204 - "GET /health HTTP/1.1" 200 OK
+[2026-01-28 21:19:34 TP0] Prefill batch, #new-seq: 1, #new-token: 31, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 21:19:38 TP0] Decode batch, #running-req: 1, #token: 63, token usage: 0.00, cuda graph: False, gen throughput (token/s): 0.26, #queue-req: 0, 
+[2026-01-28 21:19:42 TP0] Decode batch, #running-req: 1, #token: 103, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.33, #queue-req: 0, 
+[2026-01-28 21:19:47 TP0] Decode batch, #running-req: 1, #token: 143, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.41, #queue-req: 0, 
+[2026-01-28 21:19:51 TP0] Decode batch, #running-req: 1, #token: 183, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.48, #queue-req: 0, 
+[2026-01-28 21:19:55 TP0] Decode batch, #running-req: 1, #token: 223, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.55, #queue-req: 0, 
+[2026-01-28 21:19:59 TP0] Decode batch, #running-req: 1, #token: 263, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.55, #queue-req: 0, 
+[2026-01-28 21:20:04 TP0] Decode batch, #running-req: 1, #token: 303, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.49, #queue-req: 0, 
+[2026-01-28 21:20:08 TP0] Decode batch, #running-req: 1, #token: 343, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.58, #queue-req: 0, 
+[2026-01-28 21:20:12 TP0] Decode batch, #running-req: 1, #token: 383, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.56, #queue-req: 0, 
+[2026-01-28 21:20:16 TP0] Decode batch, #running-req: 1, #token: 423, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.56, #queue-req: 0, 
+[2026-01-28 21:20:20 TP0] Decode batch, #running-req: 1, #token: 463, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.53, #queue-req: 0, 
+[2026-01-28 21:20:24 TP0] Decode batch, #running-req: 1, #token: 503, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.57, #queue-req: 0, 
+[2026-01-28 21:20:29 TP0] Decode batch, #running-req: 1, #token: 543, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.56, #queue-req: 0, 
+[2026-01-28 21:20:33 TP0] Decode batch, #running-req: 1, #token: 583, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.58, #queue-req: 0, 
+[2026-01-28 21:20:37 TP0] Decode batch, #running-req: 1, #token: 623, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.58, #queue-req: 0, 
+[2026-01-28 21:20:41 TP0] Decode batch, #running-req: 1, #token: 663, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.56, #queue-req: 0, 
+[2026-01-28 21:20:45 TP0] Decode batch, #running-req: 1, #token: 703, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.49, #queue-req: 0, 
+[2026-01-28 21:20:50 TP0] Decode batch, #running-req: 1, #token: 743, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.58, #queue-req: 0, 
+[2026-01-28 21:20:54 TP0] Decode batch, #running-req: 1, #token: 783, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.55, #queue-req: 0, 
+[2026-01-28 21:20:58 TP0] Decode batch, #running-req: 1, #token: 823, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.59, #queue-req: 0, 
+[2026-01-28 21:21:02 TP0] Decode batch, #running-req: 1, #token: 863, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.52, #queue-req: 0, 
+[2026-01-28 21:21:06 TP0] Decode batch, #running-req: 1, #token: 903, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.15, #queue-req: 0, 
+[2026-01-28 21:21:11 TP0] Decode batch, #running-req: 1, #token: 943, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.26, #queue-req: 0, 
+[2026-01-28 21:21:15 TP0] Decode batch, #running-req: 1, #token: 983, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.31, #queue-req: 0, 
+[2026-01-28 21:21:19 TP0] Decode batch, #running-req: 1, #token: 1023, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.39, #queue-req: 0, 
+[2026-01-28 21:21:20] INFO:     127.0.0.1:59292 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:21:27] Endpoint '/get_model_info' is deprecated and will be removed in a future version. Please use '/model_info' instead.
+[2026-01-28 21:21:27] INFO:     127.0.0.1:50016 - "GET /get_model_info HTTP/1.1" 200 OK
+[2026-01-28 21:21:36 TP0] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 4, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 21:21:45 TP0] Decode batch, #running-req: 1, #token: 45, token usage: 0.00, cuda graph: False, gen throughput (token/s): 1.53, #queue-req: 0, 
+[2026-01-28 21:21:50 TP0] Decode batch, #running-req: 1, #token: 85, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.15, #queue-req: 0, 
+[2026-01-28 21:21:54 TP0] Decode batch, #running-req: 1, #token: 125, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.18, #queue-req: 0, 
+[2026-01-28 21:21:58] INFO:     127.0.0.1:50020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:21:58 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 21:21:59 TP0] Decode batch, #running-req: 1, #token: 15, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.12, #queue-req: 0, 
+[2026-01-28 21:22:03 TP0] Decode batch, #running-req: 1, #token: 55, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.52, #queue-req: 0, 
+[2026-01-28 21:22:07 TP0] Decode batch, #running-req: 1, #token: 95, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.63, #queue-req: 0, 
+[2026-01-28 21:22:11 TP0] Decode batch, #running-req: 1, #token: 135, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.63, #queue-req: 0, 
+[2026-01-28 21:22:14] INFO:     127.0.0.1:37696 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:22:14 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 21:22:15 TP0] Decode batch, #running-req: 1, #token: 25, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.18, #queue-req: 0, 
+[2026-01-28 21:22:20 TP0] Decode batch, #running-req: 1, #token: 65, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.52, #queue-req: 0, 
+[2026-01-28 21:22:24 TP0] Decode batch, #running-req: 1, #token: 105, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.57, #queue-req: 0, 
+[2026-01-28 21:22:28 TP0] Decode batch, #running-req: 1, #token: 145, token usage: 0.00, cuda graph: False, gen throughput (token/s): 9.58, #queue-req: 0, 
+[2026-01-28 21:22:30] INFO:     127.0.0.1:47764 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:22:41 TP0] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 5, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 21:22:41 TP0] Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 5, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 21:22:45 TP0] Decode batch, #running-req: 2, #token: 62, token usage: 0.00, cuda graph: False, gen throughput (token/s): 3.67, #queue-req: 0, 
+[2026-01-28 21:22:49 TP0] Decode batch, #running-req: 2, #token: 142, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.67, #queue-req: 0, 
+[2026-01-28 21:22:53] INFO:     127.0.0.1:38868 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:22:53] INFO:     127.0.0.1:38870 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:22:53 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 13, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 21:22:53 TP0] Prefill batch, #new-seq: 7, #new-token: 25, #cached-token: 73, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 21:22:53 TP0] Decode batch, #running-req: 8, #token: 58, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.68, #queue-req: 0, 
+[2026-01-28 21:22:58 TP0] Decode batch, #running-req: 8, #token: 378, token usage: 0.00, cuda graph: False, gen throughput (token/s): 72.20, #queue-req: 0, 
+[2026-01-28 21:23:02 TP0] Decode batch, #running-req: 8, #token: 698, token usage: 0.00, cuda graph: False, gen throughput (token/s): 74.02, #queue-req: 0, 
+[2026-01-28 21:23:04] INFO:     127.0.0.1:44354 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:04] INFO:     127.0.0.1:44358 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:04] INFO:     127.0.0.1:44360 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:04] INFO:     127.0.0.1:44362 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:04] INFO:     127.0.0.1:44376 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:04] INFO:     127.0.0.1:44392 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:04] INFO:     127.0.0.1:44394 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:04] INFO:     127.0.0.1:44402 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:04 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 13, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 21:23:04 TP0] Prefill batch, #new-seq: 15, #new-token: 39, #cached-token: 171, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 21:23:08 TP0] Decode batch, #running-req: 16, #token: 426, token usage: 0.00, cuda graph: False, gen throughput (token/s): 89.31, #queue-req: 0, 
+[2026-01-28 21:23:12 TP0] Decode batch, #running-req: 16, #token: 1066, token usage: 0.00, cuda graph: False, gen throughput (token/s): 147.58, #queue-req: 0, 
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52302 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52316 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52332 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52334 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52350 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52366 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52380 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52386 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52392 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52402 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52406 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52416 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52418 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52430 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52434 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16] INFO:     127.0.0.1:52436 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:16 TP0] Prefill batch, #new-seq: 1, #new-token: 4, #cached-token: 10, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 21:23:16 TP0] Prefill batch, #new-seq: 31, #new-token: 76, #cached-token: 358, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 21:23:17 TP0] Decode batch, #running-req: 32, #token: 202, token usage: 0.00, cuda graph: False, gen throughput (token/s): 121.65, #queue-req: 0, 
+[2026-01-28 21:23:22 TP0] Decode batch, #running-req: 32, #token: 1482, token usage: 0.00, cuda graph: False, gen throughput (token/s): 294.85, #queue-req: 0, 
+[2026-01-28 21:23:26 TP0] Decode batch, #running-req: 32, #token: 2762, token usage: 0.00, cuda graph: False, gen throughput (token/s): 293.03, #queue-req: 0, 
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40042 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40050 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40058 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40072 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40074 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40088 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40098 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40100 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40102 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40114 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40126 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40128 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40142 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40150 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40164 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40180 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40188 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40190 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40202 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40208 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40220 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40234 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40250 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40258 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40272 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40288 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40298 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40312 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40318 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40334 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40348 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:23:28] INFO:     127.0.0.1:40364 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 21:25:03] SIGTERM received. signum=None frame=None. Draining requests and shutting down...
+[2026-01-28 21:25:03] Gracefully exiting... Remaining number of requests 0. Remaining requests remaining_rids=[].

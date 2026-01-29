@@ -1,0 +1,1052 @@
+[2026-01-28 22:40:23] WARNING model_config.py:801: DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:23] INFO server_args.py:1650: Attention backend not specified. Use flashinfer backend by default.
+[2026-01-28 22:40:23] WARNING server_args.py:2003: Pipeline parallelism is incompatible with overlap schedule.
+[2026-01-28 22:40:24] server_args=ServerArgs(model_path='zai-org/GLM-4.7-FP8', tokenizer_path='zai-org/GLM-4.7-FP8', tokenizer_mode='auto', tokenizer_worker_num=1, skip_tokenizer_init=False, load_format='auto', model_loader_extra_config='{}', trust_remote_code=True, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl='auto', host='127.0.0.1', port=30000, fastapi_root_path='', grpc_mode=False, skip_server_warmup=False, warmups=None, nccl_port=None, checkpoint_engine_wait_weights_before_ready=False, dtype='auto', quantization=None, quantization_param_path=None, kv_cache_dtype='auto', enable_fp32_lm_head=False, modelopt_quant=None, modelopt_checkpoint_restore_path=None, modelopt_checkpoint_save_path=None, modelopt_export_path=None, quantize_and_serve=False, rl_quant_profile=None, mem_fraction_static=0.848, max_running_requests=None, max_queued_requests=None, max_total_tokens=None, chunked_prefill_size=8192, enable_dynamic_chunking=False, max_prefill_tokens=16384, prefill_max_requests=None, schedule_policy='fcfs', enable_priority_scheduling=False, abort_on_priority_when_disabled=False, schedule_low_priority_values_first=False, priority_scheduling_preemption_threshold=10, schedule_conservativeness=1.0, page_size=1, swa_full_tokens_ratio=0.8, disable_hybrid_swa_memory=False, radix_eviction_policy='lru', enable_prefill_delayer=False, prefill_delayer_max_delay_passes=30, prefill_delayer_token_usage_low_watermark=None, prefill_delayer_forward_passes_buckets=None, prefill_delayer_wait_seconds_buckets=None, device='cuda', tp_size=4, pp_size=2, pp_max_micro_batch_size=None, pp_async_batch_depth=0, stream_interval=1, stream_output=False, random_seed=408697962, constrained_json_whitespace_pattern=None, constrained_json_disable_any_whitespace=False, watchdog_timeout=300, soft_watchdog_timeout=None, dist_timeout=None, download_dir=None, model_checksum=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, custom_sigquit_handler=None, log_level='info', log_level_http=None, log_requests=False, log_requests_level=2, log_requests_format='text', log_requests_target=None, crash_dump_folder=None, show_time_cost=False, enable_metrics=False, enable_metrics_for_all_schedulers=False, tokenizer_metrics_custom_labels_header='x-custom-labels', tokenizer_metrics_allowed_custom_labels=None, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, prompt_tokens_buckets=None, generation_tokens_buckets=None, gc_warning_threshold_secs=0.0, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, enable_trace=False, otlp_traces_endpoint='localhost:4317', export_metrics_to_file=False, export_metrics_to_file_dir=None, api_key=None, served_model_name='zai-org/GLM-4.7-FP8', weight_version='default', chat_template=None, completion_template=None, file_storage_path='sglang_storage', enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, tool_server=None, sampling_defaults='model', dp_size=1, load_balance_method='round_robin', dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args='{}', preferred_sampling_params=None, enable_lora=None, max_lora_rank=None, lora_target_modules=None, lora_paths=None, max_loaded_loras=None, max_loras_per_batch=8, lora_eviction_policy='lru', lora_backend='csgmv', max_lora_chunk_size=16, attention_backend='flashinfer', decode_attention_backend=None, prefill_attention_backend=None, sampling_backend='flashinfer', grammar_backend='xgrammar', mm_attention_backend=None, fp8_gemm_runner_backend='auto', nsa_prefill_backend='flashmla_sparse', nsa_decode_backend='fa3', disable_flashinfer_autotune=False, speculative_algorithm=None, speculative_draft_model_path=None, speculative_draft_model_revision=None, speculative_draft_load_format=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, speculative_attention_mode='prefill', speculative_draft_attention_backend=None, speculative_moe_runner_backend='auto', speculative_moe_a2a_backend=None, speculative_draft_model_quantization=None, speculative_ngram_min_match_window_size=1, speculative_ngram_max_match_window_size=12, speculative_ngram_min_bfs_breadth=1, speculative_ngram_max_bfs_breadth=10, speculative_ngram_match_type='BFS', speculative_ngram_branch_length=18, speculative_ngram_capacity=10000000, enable_multi_layer_eagle=False, ep_size=1, moe_a2a_backend='none', moe_runner_backend='auto', flashinfer_mxfp4_moe_precision='default', enable_flashinfer_allreduce_fusion=False, deepep_mode='auto', ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location='trivial', enable_eplb=False, eplb_algorithm='auto', eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, eplb_min_rebalancing_utilization_threshold=1.0, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, elastic_ep_backend=None, mooncake_ib_device=None, max_mamba_cache_size=None, mamba_ssm_dtype='float32', mamba_full_memory_ratio=0.9, mamba_scheduler_strategy='no_buffer', mamba_track_interval=256, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy='write_through', hicache_io_backend='kernel', hicache_mem_layout='layer_first', hicache_storage_backend=None, hicache_storage_prefetch_policy='best_effort', hicache_storage_backend_extra_config=None, hierarchical_sparse_attention_extra_config=None, enable_lmcache=False, kt_weight_path=None, kt_method='AMXINT4', kt_cpuinfer=None, kt_threadpool_count=2, kt_num_gpu_experts=None, kt_max_deferred_experts_per_token=None, dllm_algorithm=None, dllm_algorithm_config=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type='qk', ds_sparse_decode_threshold=4096, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode='cpu', multi_item_scoring_delimiter=None, disable_radix_cache=False, cuda_graph_max_bs=512, cuda_graph_bs=[1, 2, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], disable_cuda_graph=True, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_layerwise_nvtx_marker=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_tokenizer_batch_decode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, enable_torch_symm_mem=False, disable_overlap_schedule=True, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_single_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, enable_piecewise_cuda_graph=False, enable_torch_compile_debug_mode=False, torch_compile_max_bs=32, piecewise_cuda_graph_max_tokens=8192, piecewise_cuda_graph_tokens=[4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 640, 704, 768, 832, 896, 960, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4608, 5120, 5632, 6144, 6656, 7168, 7680, 8192], piecewise_cuda_graph_compiler='eager', torchao_config='', enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, triton_attention_split_tile_size=None, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, enable_weights_cpu_backup=False, enable_draft_weights_cpu_backup=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, keep_mm_feature_on_device=False, enable_return_hidden_states=False, enable_return_routed_experts=False, scheduler_recv_interval=1, numa_node=None, enable_deterministic_inference=False, rl_on_policy_target=None, enable_attn_tp_input_scattered=False, enable_nsa_prefill_context_parallel=False, nsa_prefill_cp_mode='in-seq-split', enable_fused_qk_norm_rope=False, enable_precise_embedding_interpolation=False, enable_dynamic_batch_tokenizer=False, dynamic_batch_tokenizer_batch_size=32, dynamic_batch_tokenizer_batch_timeout=0.002, debug_tensor_dump_output_folder=None, debug_tensor_dump_layers=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode='null', disaggregation_transfer_backend='mooncake', disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, disaggregation_decode_enable_offload_kvcache=False, disaggregation_decode_enable_fake_auto=False, num_reserved_decode_tokens=512, disaggregation_decode_polling_interval=1, encoder_only=False, language_only=False, encoder_transfer_backend='zmq_to_scheduler', encoder_urls=[], custom_weight_loader=[], weight_loader_disable_mmap=False, remote_instance_weight_loader_seed_instance_ip=None, remote_instance_weight_loader_seed_instance_service_port=None, remote_instance_weight_loader_send_weights_group_ports=None, remote_instance_weight_loader_backend='nccl', remote_instance_weight_loader_start_seed_via_transfer_engine=False, enable_pdmux=False, pdmux_config_path=None, sm_group_num=8, mm_max_concurrent_calls=32, mm_per_request_timeout=10.0, enable_broadcast_mm_inputs_process=False, enable_prefix_mm_cache=False, mm_enable_dp_encoder=False, mm_process_config={}, limit_mm_data_per_request=None, decrypted_config_file=None, decrypted_draft_config_file=None, forward_hooks=None)
+[2026-01-28 22:40:24] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:24] Using default HuggingFace chat template with detected content format: openai
+[2026-01-28 22:40:34 PP0 TP1] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:35 PP0 TP1] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:35 PP0 TP1] Init torch distributed begin.
+[2026-01-28 22:40:35 PP1 TP0] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:35 PP1 TP3] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:35 PP1 TP2] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:36 PP1 TP0] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:36 PP1 TP0] Init torch distributed begin.
+[2026-01-28 22:40:36 PP1 TP3] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:36 PP1 TP3] Init torch distributed begin.
+[2026-01-28 22:40:36 PP1 TP1] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:36 PP0 TP3] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:36 PP0 TP2] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:36 PP1 TP2] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:36 PP1 TP2] Init torch distributed begin.
+[2026-01-28 22:40:36 PP0 TP0] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:36 PP1 TP1] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:36 PP0 TP3] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:36 PP1 TP1] Init torch distributed begin.
+[2026-01-28 22:40:36 PP0 TP2] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:36 PP0 TP3] Init torch distributed begin.
+[2026-01-28 22:40:36 PP0 TP2] Init torch distributed begin.
+[2026-01-28 22:40:37 PP0 TP0] DeepGemm is enabled but the scale_fmt of checkpoint is not ue8m0. This might cause accuracy degradation on Blackwell.
+[2026-01-28 22:40:37 PP0 TP0] Init torch distributed begin.
+[Gloo] Rank 0 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 4 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 1 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 6 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 7 is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 3 is connected to 7 peer ranks. Expected number of connected peer ranks is : [Gloo] Rank 75
+ is connected to 7 peer ranks. Expected number of connected peer ranks is : 7
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank [Gloo] Rank 01 is connected to  is connected to 33 peer ranks.  peer ranks. Expected number of connected peer ranks is : Expected number of connected peer ranks is : 33
+
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[2026-01-28 22:40:38 PP0 TP0] sglang is using nccl==2.27.5
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3[Gloo] Rank 
+[Gloo] Rank 23 is connected to  is connected to 33 peer ranks.  peer ranks. Expected number of connected peer ranks is : Expected number of connected peer ranks is : 33
+
+[2026-01-28 22:40:38 PP1 TP0] sglang is using nccl==2.27.5
+[2026-01-28 22:40:39 PP0 TP2] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-28 22:40:39 PP0 TP1] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-28 22:40:39 PP0 TP3] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-28 22:40:39 PP0 TP0] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[Gloo] Rank 0 is connected to 0[Gloo] Rank  peer ranks. 0Expected number of connected peer ranks is :  is connected to 00[Gloo] Rank 
+ peer ranks. 0Expected number of connected peer ranks is :  is connected to 00
+ peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[2026-01-28 22:40:39 PP1 TP3] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-28 22:40:39 PP1 TP2] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-28 22:40:39 PP1 TP0] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[2026-01-28 22:40:39 PP1 TP1] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0[Gloo] Rank  is connected to 00 is connected to [Gloo] Rank  peer ranks. 00Expected number of connected peer ranks is :  peer ranks.  is connected to 0Expected number of connected peer ranks is : 0
+0 peer ranks. 
+Expected number of connected peer ranks is : 0
+[Gloo] Rank 1 is connected to 1 peer ranks. [Gloo] Rank Expected number of connected peer ranks is : 10
+ is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[2026-01-28 22:40:39 PP0 TP0] sglang is using nccl==2.27.5
+[Gloo] Rank [Gloo] Rank 10 is connected to  is connected to 1[Gloo] Rank 1 peer ranks. 1 peer ranks. Expected number of connected peer ranks is :  is connected to Expected number of connected peer ranks is : 111
+ peer ranks. 
+Expected number of connected peer ranks is : 1
+[Gloo] Rank [Gloo] Rank 01 is connected to  is connected to 11 peer ranks.  peer ranks. Expected number of connected peer ranks is : Expected number of connected peer ranks is : 11
+
+[2026-01-28 22:40:39 PP0 TP3] sglang is using nccl==2.27.5
+[2026-01-28 22:40:39 PP0 TP2] sglang is using nccl==2.27.5
+[2026-01-28 22:40:39 PP0 TP1] sglang is using nccl==2.27.5
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 2 is connected to 3 peer ranks. [Gloo] Rank Expected number of connected peer ranks is : 3
+0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3[Gloo] Rank 
+0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[2026-01-28 22:40:39 PP0 TP0] Init torch distributed ends. mem usage=0.31 GB
+[2026-01-28 22:40:39 PP1 TP3] Init torch distributed ends. mem usage=0.31 GB
+[2026-01-28 22:40:39 PP1 TP2] Init torch distributed ends. mem usage=0.31 GB
+[2026-01-28 22:40:39 PP1 TP1] Init torch distributed ends. mem usage=0.31 GB
+[2026-01-28 22:40:39 PP1 TP0] Init torch distributed ends. mem usage=0.31 GB
+[2026-01-28 22:40:39 PP0 TP3] Init torch distributed ends. mem usage=0.31 GB
+[2026-01-28 22:40:39 PP0 TP2] Init torch distributed ends. mem usage=0.31 GB
+[2026-01-28 22:40:39 PP0 TP1] Init torch distributed ends. mem usage=0.31 GB
+[2026-01-28 22:40:39 PP0 TP2] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 22:40:39 PP1 TP3] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 22:40:39 PP1 TP0] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 22:40:39 PP1 TP2] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 22:40:40 PP0 TP3] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 22:40:40 PP1 TP1] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 22:40:40 PP0 TP1] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 22:40:40 PP0 TP0] Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/transformers/__init__.py)
+[2026-01-28 22:40:40 PP1 TP3] Load weight begin. avail mem=94.09 GB
+[2026-01-28 22:40:40 PP1 TP0] Load weight begin. avail mem=94.09 GB
+[2026-01-28 22:40:40 PP1 TP0] Shared experts fusion optimization enabled.
+[2026-01-28 22:40:40 PP1 TP2] Load weight begin. avail mem=94.09 GB
+[2026-01-28 22:40:40 PP1 TP1] Load weight begin. avail mem=94.09 GB
+[2026-01-28 22:40:40 PP0 TP1] Load weight begin. avail mem=94.09 GB
+[2026-01-28 22:40:40 PP0 TP0] Load weight begin. avail mem=94.09 GB
+[2026-01-28 22:40:40 PP0 TP0] Shared experts fusion optimization enabled.
+[2026-01-28 22:40:40 PP1 TP3] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 22:40:40 PP1 TP0] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 22:40:40 PP1 TP2] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 22:40:40 PP1 TP1] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 22:40:40 PP0 TP1] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 22:40:40 PP0 TP0] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 22:40:40 PP0 TP2] Load weight begin. avail mem=94.09 GB
+[2026-01-28 22:40:40 PP0 TP3] Load weight begin. avail mem=94.09 GB
+[2026-01-28 22:40:40 PP0 TP2] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 22:40:40 PP0 TP3] Using CompressedTensorsW8A8Fp8MoEMethod
+[2026-01-28 22:40:41 PP0 TP0] Found local HF snapshot for zai-org/GLM-4.7-FP8 at /workspace/.hf_home/hub/models--zai-org--GLM-4.7-FP8/snapshots/7b3b5f81eee81be12a6f8da2710eac4bafb0166a; skipping download.
+Loading safetensors checkpoint shards:   0% Completed | 0/93 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:   3% Completed | 3/93 [00:00<00:03, 25.52it/s]
+[2026-01-28 22:40:41 PP1 TP0] Found local HF snapshot for zai-org/GLM-4.7-FP8 at /workspace/.hf_home/hub/models--zai-org--GLM-4.7-FP8/snapshots/7b3b5f81eee81be12a6f8da2710eac4bafb0166a; skipping download.
+Loading safetensors checkpoint shards:   6% Completed | 6/93 [00:01<00:23,  3.71it/s]
+Loading safetensors checkpoint shards:   9% Completed | 8/93 [00:02<00:28,  3.00it/s]
+Loading safetensors checkpoint shards:  10% Completed | 9/93 [00:02<00:30,  2.80it/s]
+Loading safetensors checkpoint shards:  11% Completed | 10/93 [00:03<00:31,  2.63it/s]
+Loading safetensors checkpoint shards:  12% Completed | 11/93 [00:03<00:32,  2.52it/s]
+Loading safetensors checkpoint shards:  13% Completed | 12/93 [00:04<00:33,  2.43it/s]
+Loading safetensors checkpoint shards:  14% Completed | 13/93 [00:04<00:33,  2.36it/s]
+Loading safetensors checkpoint shards:  15% Completed | 14/93 [00:05<00:34,  2.32it/s]
+Loading safetensors checkpoint shards:  16% Completed | 15/93 [00:05<00:33,  2.31it/s]
+Loading safetensors checkpoint shards:  17% Completed | 16/93 [00:05<00:33,  2.28it/s]
+Loading safetensors checkpoint shards:  18% Completed | 17/93 [00:06<00:33,  2.27it/s]
+Loading safetensors checkpoint shards:  19% Completed | 18/93 [00:06<00:33,  2.25it/s]
+Loading safetensors checkpoint shards:  20% Completed | 19/93 [00:07<00:32,  2.26it/s]
+Loading safetensors checkpoint shards:  22% Completed | 20/93 [00:07<00:31,  2.28it/s]
+Loading safetensors checkpoint shards:  23% Completed | 21/93 [00:08<00:31,  2.29it/s]
+Loading safetensors checkpoint shards:  24% Completed | 22/93 [00:08<00:30,  2.29it/s]
+Loading safetensors checkpoint shards:  25% Completed | 23/93 [00:08<00:30,  2.28it/s]
+Loading safetensors checkpoint shards:  26% Completed | 24/93 [00:09<00:30,  2.29it/s]
+Loading safetensors checkpoint shards:  27% Completed | 25/93 [00:09<00:29,  2.29it/s]
+Loading safetensors checkpoint shards:  28% Completed | 26/93 [00:10<00:29,  2.29it/s]
+Loading safetensors checkpoint shards:  29% Completed | 27/93 [00:10<00:28,  2.30it/s]
+Loading safetensors checkpoint shards:  30% Completed | 28/93 [00:11<00:28,  2.30it/s]
+Loading safetensors checkpoint shards:  31% Completed | 29/93 [00:11<00:28,  2.27it/s]
+Loading safetensors checkpoint shards:  32% Completed | 30/93 [00:12<00:27,  2.26it/s]
+Loading safetensors checkpoint shards:  33% Completed | 31/93 [00:12<00:27,  2.24it/s]
+Loading safetensors checkpoint shards:  34% Completed | 32/93 [00:12<00:27,  2.24it/s]
+Loading safetensors checkpoint shards:  35% Completed | 33/93 [00:13<00:26,  2.23it/s]
+Loading safetensors checkpoint shards:  37% Completed | 34/93 [00:13<00:25,  2.29it/s]
+Loading safetensors checkpoint shards:  38% Completed | 35/93 [00:14<00:24,  2.40it/s]
+Loading safetensors checkpoint shards:  39% Completed | 36/93 [00:14<00:24,  2.35it/s]
+Loading safetensors checkpoint shards:  40% Completed | 37/93 [00:15<00:24,  2.32it/s]
+Loading safetensors checkpoint shards:  41% Completed | 38/93 [00:15<00:24,  2.29it/s]
+Loading safetensors checkpoint shards:  42% Completed | 39/93 [00:15<00:23,  2.27it/s]
+Loading safetensors checkpoint shards:  43% Completed | 40/93 [00:16<00:23,  2.26it/s]
+Loading safetensors checkpoint shards:  44% Completed | 41/93 [00:16<00:23,  2.25it/s]
+Loading safetensors checkpoint shards:  45% Completed | 42/93 [00:17<00:22,  2.24it/s]
+Loading safetensors checkpoint shards:  46% Completed | 43/93 [00:17<00:22,  2.23it/s]
+Loading safetensors checkpoint shards:  47% Completed | 44/93 [00:18<00:21,  2.23it/s]
+Loading safetensors checkpoint shards:  48% Completed | 45/93 [00:18<00:21,  2.24it/s]
+Loading safetensors checkpoint shards:  49% Completed | 46/93 [00:19<00:21,  2.22it/s]
+Loading safetensors checkpoint shards:  52% Completed | 48/93 [00:19<00:12,  3.66it/s]
+Loading safetensors checkpoint shards:  55% Completed | 51/93 [00:19<00:06,  6.45it/s]
+Loading safetensors checkpoint shards:  58% Completed | 54/93 [00:19<00:04,  9.50it/s]
+Loading safetensors checkpoint shards:  61% Completed | 57/93 [00:19<00:02, 12.59it/s]
+Loading safetensors checkpoint shards:  65% Completed | 60/93 [00:19<00:02, 15.64it/s]
+Loading safetensors checkpoint shards:  68% Completed | 63/93 [00:19<00:01, 18.39it/s]
+Loading safetensors checkpoint shards:  71% Completed | 66/93 [00:19<00:01, 20.76it/s]
+Loading safetensors checkpoint shards:  74% Completed | 69/93 [00:20<00:01, 22.72it/s]
+Loading safetensors checkpoint shards:  77% Completed | 72/93 [00:20<00:00, 24.10it/s]
+Loading safetensors checkpoint shards:  81% Completed | 75/93 [00:20<00:00, 25.27it/s]
+Loading safetensors checkpoint shards:  84% Completed | 78/93 [00:20<00:00, 26.19it/s]
+[2026-01-28 22:41:01 PP0 TP2] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=53.41 GB, mem usage=40.69 GB.
+Loading safetensors checkpoint shards:  88% Completed | 82/93 [00:20<00:00, 28.50it/s]
+[2026-01-28 22:41:01 PP0 TP1] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=53.41 GB, mem usage=40.69 GB.
+Loading safetensors checkpoint shards:  91% Completed | 85/93 [00:20<00:00, 28.54it/s]
+Loading safetensors checkpoint shards:  95% Completed | 88/93 [00:20<00:00, 28.61it/s]
+[2026-01-28 22:41:01 PP0 TP3] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=53.41 GB, mem usage=40.69 GB.
+Loading safetensors checkpoint shards:  98% Completed | 91/93 [00:20<00:00, 28.66it/s]
+Loading safetensors checkpoint shards: 100% Completed | 93/93 [00:20<00:00,  4.46it/s]
+
+[2026-01-28 22:41:02 PP0 TP0] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=53.41 GB, mem usage=40.69 GB.
+[2026-01-28 22:41:02 PP0 TP0] Using KV cache dtype: torch.bfloat16
+[2026-01-28 22:41:02 PP1 TP3] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=51.23 GB, mem usage=42.86 GB.
+[2026-01-28 22:41:03 PP1 TP0] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=51.23 GB, mem usage=42.86 GB.
+[2026-01-28 22:41:03 PP1 TP2] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=51.23 GB, mem usage=42.86 GB.
+[2026-01-28 22:41:03 PP1 TP1] Load weight end. type=Glm4MoeForCausalLM, dtype=torch.bfloat16, avail mem=51.23 GB, mem usage=42.86 GB.
+[2026-01-28 22:41:03 PP1 TP0] Using KV cache dtype: torch.bfloat16
+[2026-01-28 22:41:03 PP1 TP3] KV Cache is allocated. #tokens: 841782, K size: 18.46 GB, V size: 18.46 GB
+[2026-01-28 22:41:03 PP1 TP3] Memory pool end. avail mem=12.61 GB
+[2026-01-28 22:41:03 PP0 TP2] KV Cache is allocated. #tokens: 841782, K size: 18.46 GB, V size: 18.46 GB
+[2026-01-28 22:41:03 PP0 TP2] Memory pool end. avail mem=14.79 GB
+[2026-01-28 22:41:03 PP1 TP1] KV Cache is allocated. #tokens: 841782, K size: 18.46 GB, V size: 18.46 GB
+[2026-01-28 22:41:03 PP0 TP1] KV Cache is allocated. #tokens: 841782, K size: 18.46 GB, V size: 18.46 GB
+[2026-01-28 22:41:03 PP1 TP1] Memory pool end. avail mem=12.61 GB
+[2026-01-28 22:41:03 PP0 TP3] KV Cache is allocated. #tokens: 841782, K size: 18.46 GB, V size: 18.46 GB
+[2026-01-28 22:41:03 PP0 TP1] Memory pool end. avail mem=14.79 GB
+[2026-01-28 22:41:03 PP0 TP3] Memory pool end. avail mem=14.79 GB
+[2026-01-28 22:41:03 PP1 TP2] KV Cache is allocated. #tokens: 841782, K size: 18.46 GB, V size: 18.46 GB
+[2026-01-28 22:41:03 PP1 TP2] Memory pool end. avail mem=12.61 GB
+[2026-01-28 22:41:03 PP0 TP0] KV Cache is allocated. #tokens: 841782, K size: 18.46 GB, V size: 18.46 GB
+[2026-01-28 22:41:03 PP0 TP0] Memory pool end. avail mem=14.79 GB
+[2026-01-28 22:41:03 PP1 TP0] KV Cache is allocated. #tokens: 841782, K size: 18.46 GB, V size: 18.46 GB
+[2026-01-28 22:41:03 PP1 TP0] Memory pool end. avail mem=12.61 GB
+[2026-01-28 22:41:04 PP1 TP0] max_total_num_tokens=841782, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=2125, context_len=202752, available_gpu_mem=12.13 GB
+[2026-01-28 22:41:04 PP0 TP0] max_total_num_tokens=841782, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=2125, context_len=202752, available_gpu_mem=14.30 GB
+[2026-01-28 22:41:04] INFO:     Started server process [421436]
+[2026-01-28 22:41:04] INFO:     Waiting for application startup.
+[2026-01-28 22:41:04] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 1.0, 'top_k': 50, 'top_p': 1.0}
+[2026-01-28 22:41:04] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 1.0, 'top_k': 50, 'top_p': 1.0}
+[2026-01-28 22:41:04] INFO:     Application startup complete.
+[2026-01-28 22:41:04] INFO:     Uvicorn running on http://127.0.0.1:30000 (Press CTRL+C to quit)
+[2026-01-28 22:41:05] INFO:     127.0.0.1:44774 - "GET /model_info HTTP/1.1" 200 OK
+[2026-01-28 22:41:05 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:41:05 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 6, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:41:13 PP0 TP2] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 22:41:13 PP0 TP2] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 22:41:13 PP0 TP3] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 22:41:13 PP0 TP3] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 22:41:13 PP0 TP0] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 22:41:13 PP0 TP0] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 22:41:13 PP0 TP1] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 22:41:13 PP0 TP1] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+/workspace/sglang-pr16975/python/sglang/srt/distributed/parallel_state.py:989: UserWarning: The given buffer is not writable, and PyTorch does not support non-writable tensors. This means you can write to the underlying (supposedly non-writable) buffer using the tensor. You may want to copy the buffer to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:1581.)
+  object_tensor = torch.frombuffer(pickle.dumps(obj), dtype=torch.uint8)
+[rank2]:[W128 22:41:13.113564838 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+[rank6]:[W128 22:41:13.114545403 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+/workspace/sglang-pr16975/python/sglang/srt/distributed/parallel_state.py:989: UserWarning: The given buffer is not writable, and PyTorch does not support non-writable tensors. This means you can write to the underlying (supposedly non-writable) buffer using the tensor. You may want to copy the buffer to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:1581.)
+  object_tensor = torch.frombuffer(pickle.dumps(obj), dtype=torch.uint8)
+[rank3]:[W128 22:41:13.129893311 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+[rank7]:[W128 22:41:13.130710395 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+/workspace/sglang-pr16975/python/sglang/srt/distributed/parallel_state.py:989: UserWarning: The given buffer is not writable, and PyTorch does not support non-writable tensors. This means you can write to the underlying (supposedly non-writable) buffer using the tensor. You may want to copy the buffer to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:1581.)
+  object_tensor = torch.frombuffer(pickle.dumps(obj), dtype=torch.uint8)
+[rank0]:[W128 22:41:13.141354721 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+[rank4]:[W128 22:41:13.142044547 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+/workspace/sglang-pr16975/python/sglang/srt/distributed/parallel_state.py:989: UserWarning: The given buffer is not writable, and PyTorch does not support non-writable tensors. This means you can write to the underlying (supposedly non-writable) buffer using the tensor. You may want to copy the buffer to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:1581.)
+  object_tensor = torch.frombuffer(pickle.dumps(obj), dtype=torch.uint8)
+[rank1]:[W128 22:41:13.148419452 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+[rank5]:[W128 22:41:13.148963323 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+[2026-01-28 22:41:15 PP1 TP0] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 22:41:15 PP1 TP1] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 22:41:15 PP1 TP0] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 22:41:15 PP1 TP1] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 22:41:15 PP1 TP2] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 22:41:15 PP1 TP3] Using default MoE kernel config. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 22:41:15 PP1 TP2] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+[2026-01-28 22:41:15 PP1 TP3] Using MoE kernel config with down_moe=False. Performance might be sub-optimal! Config file not found at /workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/configs/triton_3_5_1/E=161,N=384,device_name=NVIDIA_RTX_PRO_6000_Blackwell_Server_Edition,dtype=fp8_w8a8,per_channel_quant=True_down.json, you can create them with https://github.com/sgl-project/sglang/tree/main/benchmark/kernels/fused_moe_triton
+/workspace/sglang-pr16975/python/sglang/srt/distributed/parallel_state.py:989: UserWarning: The given buffer is not writable, and PyTorch does not support non-writable tensors. This means you can write to the underlying (supposedly non-writable) buffer using the tensor. You may want to copy the buffer to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:1581.)
+  object_tensor = torch.frombuffer(pickle.dumps(obj), dtype=torch.uint8)
+/workspace/sglang-pr16975/python/sglang/srt/distributed/parallel_state.py:989: UserWarning: The given buffer is not writable, and PyTorch does not support non-writable tensors. This means you can write to the underlying (supposedly non-writable) buffer using the tensor. You may want to copy the buffer to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:1581.)
+  object_tensor = torch.frombuffer(pickle.dumps(obj), dtype=torch.uint8)
+[rank5]:[W128 22:41:15.298889896 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+[rank4]:[W128 22:41:15.298932099 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+[rank1]:[W128 22:41:15.299747200 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+[rank0]:[W128 22:41:15.299905423 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+/workspace/sglang-pr16975/python/sglang/srt/distributed/parallel_state.py:989: UserWarning: The given buffer is not writable, and PyTorch does not support non-writable tensors. This means you can write to the underlying (supposedly non-writable) buffer using the tensor. You may want to copy the buffer to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:1581.)
+  object_tensor = torch.frombuffer(pickle.dumps(obj), dtype=torch.uint8)
+[rank7]:[W128 22:41:15.302725429 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+[rank3]:[W128 22:41:15.303522453 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+/workspace/sglang-pr16975/python/sglang/srt/distributed/parallel_state.py:989: UserWarning: The given buffer is not writable, and PyTorch does not support non-writable tensors. This means you can write to the underlying (supposedly non-writable) buffer using the tensor. You may want to copy the buffer to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:1581.)
+  object_tensor = torch.frombuffer(pickle.dumps(obj), dtype=torch.uint8)
+[rank6]:[W128 22:41:15.303795756 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+[rank2]:[W128 22:41:15.304520434 ProcessGroupNCCL.cpp:4004] Warning: An unbatched P2P op (send/recv) was called on this ProcessGroup with size 2.  In lazy initialization mode, this will result in a new 2-rank NCCL communicator to be created. (function operator())
+[2026-01-28 22:41:17] INFO:     127.0.0.1:44782 - "POST /generate HTTP/1.1" 200 OK
+[2026-01-28 22:41:17] The server is fired up and ready to roll!
+[2026-01-28 22:42:19 PP0 TP0] Prefill batch, #new-seq: 2, #new-token: 122, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:42:19 PP1 TP0] Prefill batch, #new-seq: 2, #new-token: 122, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:42:20 PP0 TP0] Prefill batch, #new-seq: 2, #new-token: 122, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:42:20 PP1 TP0] Prefill batch, #new-seq: 2, #new-token: 122, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:42:23 PP0 TP0] Decode batch, #running-req: 2, #token: 276, token usage: 0.00, cuda graph: False, gen throughput (token/s): 0.69, #queue-req: 0, 
+[2026-01-28 22:42:23 PP1 TP0] Decode batch, #running-req: 2, #token: 276, token usage: 0.00, cuda graph: False, gen throughput (token/s): 0.68, #queue-req: 0, 
+[2026-01-28 22:42:25 PP0 TP0] Decode batch, #running-req: 2, #token: 356, token usage: 0.00, cuda graph: False, gen throughput (token/s): 34.96, #queue-req: 0, 
+[2026-01-28 22:42:25 PP1 TP0] Decode batch, #running-req: 2, #token: 356, token usage: 0.00, cuda graph: False, gen throughput (token/s): 34.94, #queue-req: 0, 
+[2026-01-28 22:42:27 PP0 TP0] Decode batch, #running-req: 2, #token: 436, token usage: 0.00, cuda graph: False, gen throughput (token/s): 34.29, #queue-req: 0, 
+[2026-01-28 22:42:27 PP1 TP0] Decode batch, #running-req: 2, #token: 436, token usage: 0.00, cuda graph: False, gen throughput (token/s): 34.25, #queue-req: 0, 
+[2026-01-28 22:42:30 PP0 TP0] Decode batch, #running-req: 2, #token: 516, token usage: 0.00, cuda graph: False, gen throughput (token/s): 34.19, #queue-req: 0, 
+[2026-01-28 22:42:30 PP1 TP0] Decode batch, #running-req: 2, #token: 516, token usage: 0.00, cuda graph: False, gen throughput (token/s): 34.26, #queue-req: 0, 
+[2026-01-28 22:42:32 PP0 TP0] Decode batch, #running-req: 2, #token: 596, token usage: 0.00, cuda graph: False, gen throughput (token/s): 34.68, #queue-req: 0, 
+[2026-01-28 22:42:32 PP1 TP0] Decode batch, #running-req: 2, #token: 596, token usage: 0.00, cuda graph: False, gen throughput (token/s): 34.67, #queue-req: 0, 
+[2026-01-28 22:42:32] INFO:     127.0.0.1:40970 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:42:32] INFO:     127.0.0.1:40974 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:42:32] INFO:     127.0.0.1:40984 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:42:32] INFO:     127.0.0.1:40986 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:42:32 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 60, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:42:32 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 60, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:42:33 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 60, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:42:33 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 60, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:42:35 PP0 TP0] Decode batch, #running-req: 1, #token: 146, token usage: 0.00, cuda graph: False, gen throughput (token/s): 14.81, #queue-req: 0, 
+[2026-01-28 22:42:35 PP1 TP0] Decode batch, #running-req: 1, #token: 146, token usage: 0.00, cuda graph: False, gen throughput (token/s): 14.81, #queue-req: 0, 
+[2026-01-28 22:42:37 PP0 TP0] Decode batch, #running-req: 1, #token: 186, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.98, #queue-req: 0, 
+[2026-01-28 22:42:37 PP1 TP0] Decode batch, #running-req: 1, #token: 186, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.98, #queue-req: 0, 
+[2026-01-28 22:42:40 PP0 TP0] Decode batch, #running-req: 1, #token: 226, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.24, #queue-req: 0, 
+[2026-01-28 22:42:40 PP1 TP0] Decode batch, #running-req: 1, #token: 226, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.22, #queue-req: 0, 
+[2026-01-28 22:42:42 PP0 TP0] Decode batch, #running-req: 1, #token: 266, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.67, #queue-req: 0, 
+[2026-01-28 22:42:42 PP1 TP0] Decode batch, #running-req: 1, #token: 266, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.69, #queue-req: 0, 
+[2026-01-28 22:42:44 PP0 TP0] Decode batch, #running-req: 1, #token: 306, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.96, #queue-req: 0, 
+[2026-01-28 22:42:44 PP1 TP0] Decode batch, #running-req: 1, #token: 306, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.97, #queue-req: 0, 
+[2026-01-28 22:42:44] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:42:44 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 60, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:42:44] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:42:44 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 60, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:42:44 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 60, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:42:44 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 60, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:42:47 PP0 TP0] Decode batch, #running-req: 1, #token: 148, token usage: 0.00, cuda graph: False, gen throughput (token/s): 16.21, #queue-req: 0, 
+[2026-01-28 22:42:47 PP1 TP0] Decode batch, #running-req: 1, #token: 148, token usage: 0.00, cuda graph: False, gen throughput (token/s): 16.21, #queue-req: 0, 
+[2026-01-28 22:42:49 PP0 TP0] Decode batch, #running-req: 1, #token: 188, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.81, #queue-req: 0, 
+[2026-01-28 22:42:49 PP1 TP0] Decode batch, #running-req: 1, #token: 188, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.82, #queue-req: 0, 
+[2026-01-28 22:42:51 PP0 TP0] Decode batch, #running-req: 1, #token: 228, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.03, #queue-req: 0, 
+[2026-01-28 22:42:51 PP1 TP0] Decode batch, #running-req: 1, #token: 228, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.02, #queue-req: 0, 
+[2026-01-28 22:42:53 PP0 TP0] Decode batch, #running-req: 1, #token: 268, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.05, #queue-req: 0, 
+[2026-01-28 22:42:53 PP1 TP0] Decode batch, #running-req: 1, #token: 268, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.04, #queue-req: 0, 
+[2026-01-28 22:42:55 PP0 TP0] Decode batch, #running-req: 1, #token: 160, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.86, #queue-req: 0, 
+[2026-01-28 22:42:55] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:42:55 PP1 TP0] Decode batch, #running-req: 1, #token: 160, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.85, #queue-req: 0, 
+[2026-01-28 22:42:55] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:42:55 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:42:56 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:42:56 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:42:56 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:42:58 PP0 TP0] Decode batch, #running-req: 1, #token: 150, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.98, #queue-req: 0, 
+[2026-01-28 22:42:58 PP1 TP0] Decode batch, #running-req: 1, #token: 150, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.98, #queue-req: 0, 
+[2026-01-28 22:43:00 PP0 TP0] Decode batch, #running-req: 1, #token: 190, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.06, #queue-req: 0, 
+[2026-01-28 22:43:00 PP1 TP0] Decode batch, #running-req: 1, #token: 190, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.07, #queue-req: 0, 
+[2026-01-28 22:43:02 PP0 TP0] Decode batch, #running-req: 1, #token: 230, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.90, #queue-req: 0, 
+[2026-01-28 22:43:02 PP1 TP0] Decode batch, #running-req: 1, #token: 230, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.88, #queue-req: 0, 
+[2026-01-28 22:43:05 PP0 TP0] Decode batch, #running-req: 1, #token: 270, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.83, #queue-req: 0, 
+[2026-01-28 22:43:05 PP1 TP0] Decode batch, #running-req: 1, #token: 270, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.85, #queue-req: 0, 
+[2026-01-28 22:43:07] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:43:07] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:43:07 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:43:07 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:43:07 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:43:07 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:43:07 PP0 TP0] Decode batch, #running-req: 1, #token: 112, token usage: 0.00, cuda graph: False, gen throughput (token/s): 16.23, #queue-req: 0, 
+[2026-01-28 22:43:07 PP1 TP0] Decode batch, #running-req: 1, #token: 112, token usage: 0.00, cuda graph: False, gen throughput (token/s): 16.23, #queue-req: 0, 
+[2026-01-28 22:43:09 PP0 TP0] Decode batch, #running-req: 1, #token: 152, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.89, #queue-req: 0, 
+[2026-01-28 22:43:09 PP1 TP0] Decode batch, #running-req: 1, #token: 152, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.89, #queue-req: 0, 
+[2026-01-28 22:43:12 PP0 TP0] Decode batch, #running-req: 1, #token: 192, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.65, #queue-req: 0, 
+[2026-01-28 22:43:12 PP1 TP0] Decode batch, #running-req: 1, #token: 192, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.65, #queue-req: 0, 
+[2026-01-28 22:43:14 PP0 TP0] Decode batch, #running-req: 1, #token: 232, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.59, #queue-req: 0, 
+[2026-01-28 22:43:14 PP1 TP0] Decode batch, #running-req: 1, #token: 232, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.60, #queue-req: 0, 
+[2026-01-28 22:43:16 PP0 TP0] Decode batch, #running-req: 1, #token: 272, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.00, #queue-req: 0, 
+[2026-01-28 22:43:16 PP1 TP0] Decode batch, #running-req: 1, #token: 272, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.00, #queue-req: 0, 
+[2026-01-28 22:43:18] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:43:18] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:43:18 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:43:18 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:43:18 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:43:18 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:43:19 PP0 TP0] Decode batch, #running-req: 1, #token: 114, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.98, #queue-req: 0, 
+[2026-01-28 22:43:19 PP1 TP0] Decode batch, #running-req: 1, #token: 114, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.97, #queue-req: 0, 
+[2026-01-28 22:43:21 PP0 TP0] Decode batch, #running-req: 1, #token: 154, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.06, #queue-req: 0, 
+[2026-01-28 22:43:21 PP1 TP0] Decode batch, #running-req: 1, #token: 154, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.06, #queue-req: 0, 
+[2026-01-28 22:43:23 PP0 TP0] Decode batch, #running-req: 1, #token: 194, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.13, #queue-req: 0, 
+[2026-01-28 22:43:23 PP1 TP0] Decode batch, #running-req: 1, #token: 194, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.14, #queue-req: 0, 
+[2026-01-28 22:43:25 PP0 TP0] Decode batch, #running-req: 1, #token: 234, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.02, #queue-req: 0, 
+[2026-01-28 22:43:25 PP1 TP0] Decode batch, #running-req: 1, #token: 234, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.02, #queue-req: 0, 
+[2026-01-28 22:43:27 PP0 TP0] Decode batch, #running-req: 1, #token: 274, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.99, #queue-req: 0, 
+[2026-01-28 22:43:28 PP1 TP0] Decode batch, #running-req: 1, #token: 274, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.98, #queue-req: 0, 
+[2026-01-28 22:43:29] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:43:29] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:43:29 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:43:29 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:43:29 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:43:30 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:43:30 PP0 TP0] Decode batch, #running-req: 1, #token: 116, token usage: 0.00, cuda graph: False, gen throughput (token/s): 16.01, #queue-req: 0, 
+[2026-01-28 22:43:30 PP1 TP0] Decode batch, #running-req: 1, #token: 116, token usage: 0.00, cuda graph: False, gen throughput (token/s): 16.03, #queue-req: 0, 
+[2026-01-28 22:43:32 PP0 TP0] Decode batch, #running-req: 1, #token: 156, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.98, #queue-req: 0, 
+[2026-01-28 22:43:32 PP1 TP0] Decode batch, #running-req: 1, #token: 156, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.97, #queue-req: 0, 
+[2026-01-28 22:43:34 PP0 TP0] Decode batch, #running-req: 1, #token: 196, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.94, #queue-req: 0, 
+[2026-01-28 22:43:34 PP1 TP0] Decode batch, #running-req: 1, #token: 196, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.94, #queue-req: 0, 
+[2026-01-28 22:43:37 PP0 TP0] Decode batch, #running-req: 1, #token: 236, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.03, #queue-req: 0, 
+[2026-01-28 22:43:37 PP1 TP0] Decode batch, #running-req: 1, #token: 236, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.05, #queue-req: 0, 
+[2026-01-28 22:43:39 PP0 TP0] Decode batch, #running-req: 1, #token: 276, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.05, #queue-req: 0, 
+[2026-01-28 22:43:39 PP1 TP0] Decode batch, #running-req: 1, #token: 276, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.05, #queue-req: 0, 
+[2026-01-28 22:43:41] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:43:41 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:43:41] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:43:41 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:43:41 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:43:41 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:43:41 PP0 TP0] Decode batch, #running-req: 1, #token: 118, token usage: 0.00, cuda graph: False, gen throughput (token/s): 16.04, #queue-req: 0, 
+[2026-01-28 22:43:41 PP1 TP0] Decode batch, #running-req: 1, #token: 118, token usage: 0.00, cuda graph: False, gen throughput (token/s): 16.03, #queue-req: 0, 
+[2026-01-28 22:43:44 PP0 TP0] Decode batch, #running-req: 1, #token: 158, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.95, #queue-req: 0, 
+[2026-01-28 22:43:44 PP1 TP0] Decode batch, #running-req: 1, #token: 158, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.96, #queue-req: 0, 
+[2026-01-28 22:43:46 PP0 TP0] Decode batch, #running-req: 1, #token: 198, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.97, #queue-req: 0, 
+[2026-01-28 22:43:46 PP1 TP0] Decode batch, #running-req: 1, #token: 198, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.97, #queue-req: 0, 
+[2026-01-28 22:43:48 PP0 TP0] Decode batch, #running-req: 1, #token: 238, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.98, #queue-req: 0, 
+[2026-01-28 22:43:48 PP1 TP0] Decode batch, #running-req: 1, #token: 238, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.99, #queue-req: 0, 
+[2026-01-28 22:43:50 PP0 TP0] Decode batch, #running-req: 1, #token: 278, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.05, #queue-req: 0, 
+[2026-01-28 22:43:50 PP1 TP0] Decode batch, #running-req: 1, #token: 278, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.05, #queue-req: 0, 
+[2026-01-28 22:43:52] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:43:52 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:43:52] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:43:52 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:43:52 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:43:52 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:43:53 PP0 TP0] Decode batch, #running-req: 1, #token: 120, token usage: 0.00, cuda graph: False, gen throughput (token/s): 16.09, #queue-req: 0, 
+[2026-01-28 22:43:53 PP1 TP0] Decode batch, #running-req: 1, #token: 120, token usage: 0.00, cuda graph: False, gen throughput (token/s): 16.09, #queue-req: 0, 
+[2026-01-28 22:43:55 PP0 TP0] Decode batch, #running-req: 1, #token: 160, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.00, #queue-req: 0, 
+[2026-01-28 22:43:55 PP1 TP0] Decode batch, #running-req: 1, #token: 160, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.01, #queue-req: 0, 
+[2026-01-28 22:43:57 PP0 TP0] Decode batch, #running-req: 1, #token: 200, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.12, #queue-req: 0, 
+[2026-01-28 22:43:57 PP1 TP0] Decode batch, #running-req: 1, #token: 200, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.13, #queue-req: 0, 
+[2026-01-28 22:43:59 PP0 TP0] Decode batch, #running-req: 1, #token: 240, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.01, #queue-req: 0, 
+[2026-01-28 22:43:59 PP1 TP0] Decode batch, #running-req: 1, #token: 240, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.01, #queue-req: 0, 
+[2026-01-28 22:44:02 PP0 TP0] Decode batch, #running-req: 1, #token: 280, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.13, #queue-req: 0, 
+[2026-01-28 22:44:02 PP1 TP0] Decode batch, #running-req: 1, #token: 280, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.13, #queue-req: 0, 
+[2026-01-28 22:44:03] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:44:03 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:44:03] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:44:03 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:44:03 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:44:03 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:44:04 PP0 TP0] Decode batch, #running-req: 1, #token: 122, token usage: 0.00, cuda graph: False, gen throughput (token/s): 16.10, #queue-req: 0, 
+[2026-01-28 22:44:04 PP1 TP0] Decode batch, #running-req: 1, #token: 122, token usage: 0.00, cuda graph: False, gen throughput (token/s): 16.10, #queue-req: 0, 
+[2026-01-28 22:44:06 PP0 TP0] Decode batch, #running-req: 1, #token: 162, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.01, #queue-req: 0, 
+[2026-01-28 22:44:06 PP1 TP0] Decode batch, #running-req: 1, #token: 162, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.01, #queue-req: 0, 
+[2026-01-28 22:44:08 PP0 TP0] Decode batch, #running-req: 1, #token: 202, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.21, #queue-req: 0, 
+[2026-01-28 22:44:09 PP1 TP0] Decode batch, #running-req: 1, #token: 202, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.21, #queue-req: 0, 
+[2026-01-28 22:44:11 PP0 TP0] Decode batch, #running-req: 1, #token: 242, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.23, #queue-req: 0, 
+[2026-01-28 22:44:11 PP1 TP0] Decode batch, #running-req: 1, #token: 242, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.22, #queue-req: 0, 
+[2026-01-28 22:44:13 PP0 TP0] Decode batch, #running-req: 1, #token: 282, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.06, #queue-req: 0, 
+[2026-01-28 22:44:13 PP1 TP0] Decode batch, #running-req: 1, #token: 282, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.07, #queue-req: 0, 
+[2026-01-28 22:44:14] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:44:14 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:44:14] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:44:14 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:44:14 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:44:15 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:44:15 PP0 TP0] Decode batch, #running-req: 1, #token: 124, token usage: 0.00, cuda graph: False, gen throughput (token/s): 16.28, #queue-req: 0, 
+[2026-01-28 22:44:15 PP1 TP0] Decode batch, #running-req: 1, #token: 124, token usage: 0.00, cuda graph: False, gen throughput (token/s): 16.27, #queue-req: 0, 
+[2026-01-28 22:44:18 PP0 TP0] Decode batch, #running-req: 1, #token: 164, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.16, #queue-req: 0, 
+[2026-01-28 22:44:18 PP1 TP0] Decode batch, #running-req: 1, #token: 164, token usage: 0.00, cuda graph: False, gen throughput (token/s): 18.18, #queue-req: 0, 
+[2026-01-28 22:44:20 PP0 TP0] Decode batch, #running-req: 1, #token: 204, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.80, #queue-req: 0, 
+[2026-01-28 22:44:20 PP1 TP0] Decode batch, #running-req: 1, #token: 204, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.79, #queue-req: 0, 
+[2026-01-28 22:44:22 PP0 TP0] Decode batch, #running-req: 1, #token: 244, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.56, #queue-req: 0, 
+[2026-01-28 22:44:22 PP1 TP0] Decode batch, #running-req: 1, #token: 244, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.55, #queue-req: 0, 
+[2026-01-28 22:44:24 PP0 TP0] Decode batch, #running-req: 1, #token: 284, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.52, #queue-req: 0, 
+[2026-01-28 22:44:24 PP1 TP0] Decode batch, #running-req: 1, #token: 284, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.52, #queue-req: 0, 
+[2026-01-28 22:44:26] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:44:26] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:44:26 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:44:26 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:44:26 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:44:26 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:44:27 PP0 TP0] Decode batch, #running-req: 1, #token: 126, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.55, #queue-req: 0, 
+[2026-01-28 22:44:27 PP1 TP0] Decode batch, #running-req: 1, #token: 126, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.56, #queue-req: 0, 
+[2026-01-28 22:44:29 PP0 TP0] Decode batch, #running-req: 1, #token: 166, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.60, #queue-req: 0, 
+[2026-01-28 22:44:29 PP1 TP0] Decode batch, #running-req: 1, #token: 166, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.59, #queue-req: 0, 
+[2026-01-28 22:44:31 PP0 TP0] Decode batch, #running-req: 1, #token: 206, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.65, #queue-req: 0, 
+[2026-01-28 22:44:32 PP1 TP0] Decode batch, #running-req: 1, #token: 206, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.65, #queue-req: 0, 
+[2026-01-28 22:44:34 PP0 TP0] Decode batch, #running-req: 1, #token: 246, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.61, #queue-req: 0, 
+[2026-01-28 22:44:34 PP1 TP0] Decode batch, #running-req: 1, #token: 246, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.62, #queue-req: 0, 
+[2026-01-28 22:44:36 PP0 TP0] Decode batch, #running-req: 1, #token: 286, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.54, #queue-req: 0, 
+[2026-01-28 22:44:36 PP1 TP0] Decode batch, #running-req: 1, #token: 286, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.54, #queue-req: 0, 
+[2026-01-28 22:44:37] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:44:37] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:44:37 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:44:37 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:44:37 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:44:38 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:44:39 PP0 TP0] Decode batch, #running-req: 1, #token: 128, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.75, #queue-req: 0, 
+[2026-01-28 22:44:39 PP1 TP0] Decode batch, #running-req: 1, #token: 128, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.75, #queue-req: 0, 
+[2026-01-28 22:44:41 PP0 TP0] Decode batch, #running-req: 1, #token: 168, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.65, #queue-req: 0, 
+[2026-01-28 22:44:41 PP1 TP0] Decode batch, #running-req: 1, #token: 168, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.65, #queue-req: 0, 
+[2026-01-28 22:44:43 PP0 TP0] Decode batch, #running-req: 1, #token: 208, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.59, #queue-req: 0, 
+[2026-01-28 22:44:43 PP1 TP0] Decode batch, #running-req: 1, #token: 208, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.60, #queue-req: 0, 
+[2026-01-28 22:44:45 PP0 TP0] Decode batch, #running-req: 1, #token: 248, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.57, #queue-req: 0, 
+[2026-01-28 22:44:45 PP1 TP0] Decode batch, #running-req: 1, #token: 248, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.57, #queue-req: 0, 
+[2026-01-28 22:44:48 PP0 TP0] Decode batch, #running-req: 1, #token: 288, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.54, #queue-req: 0, 
+[2026-01-28 22:44:48 PP1 TP0] Decode batch, #running-req: 1, #token: 288, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.55, #queue-req: 0, 
+[2026-01-28 22:44:49] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:44:49 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:44:49] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:44:49 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:44:49 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:44:49 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:44:50 PP0 TP0] Decode batch, #running-req: 1, #token: 130, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.84, #queue-req: 0, 
+[2026-01-28 22:44:50 PP1 TP0] Decode batch, #running-req: 1, #token: 130, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.83, #queue-req: 0, 
+[2026-01-28 22:44:52 PP0 TP0] Decode batch, #running-req: 1, #token: 170, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.62, #queue-req: 0, 
+[2026-01-28 22:44:53 PP1 TP0] Decode batch, #running-req: 1, #token: 170, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.62, #queue-req: 0, 
+[2026-01-28 22:44:55 PP0 TP0] Decode batch, #running-req: 1, #token: 210, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.65, #queue-req: 0, 
+[2026-01-28 22:44:55 PP1 TP0] Decode batch, #running-req: 1, #token: 210, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.64, #queue-req: 0, 
+[2026-01-28 22:44:57 PP0 TP0] Decode batch, #running-req: 1, #token: 250, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.64, #queue-req: 0, 
+[2026-01-28 22:44:57 PP1 TP0] Decode batch, #running-req: 1, #token: 250, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.64, #queue-req: 0, 
+[2026-01-28 22:44:59 PP0 TP0] Decode batch, #running-req: 1, #token: 290, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.48, #queue-req: 0, 
+[2026-01-28 22:44:59 PP1 TP0] Decode batch, #running-req: 1, #token: 290, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.48, #queue-req: 0, 
+[2026-01-28 22:45:00] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:00] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:00 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:45:00 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:45:00 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:45:01 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:45:02 PP0 TP0] Decode batch, #running-req: 1, #token: 132, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.89, #queue-req: 0, 
+[2026-01-28 22:45:02 PP1 TP0] Decode batch, #running-req: 1, #token: 132, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.89, #queue-req: 0, 
+[2026-01-28 22:45:04 PP0 TP0] Decode batch, #running-req: 1, #token: 172, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.65, #queue-req: 0, 
+[2026-01-28 22:45:04 PP1 TP0] Decode batch, #running-req: 1, #token: 172, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.65, #queue-req: 0, 
+[2026-01-28 22:45:06 PP0 TP0] Decode batch, #running-req: 1, #token: 212, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.63, #queue-req: 0, 
+[2026-01-28 22:45:06 PP1 TP0] Decode batch, #running-req: 1, #token: 212, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.62, #queue-req: 0, 
+[2026-01-28 22:45:09 PP0 TP0] Decode batch, #running-req: 1, #token: 252, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.58, #queue-req: 0, 
+[2026-01-28 22:45:09 PP1 TP0] Decode batch, #running-req: 1, #token: 252, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.58, #queue-req: 0, 
+[2026-01-28 22:45:11 PP0 TP0] Decode batch, #running-req: 1, #token: 292, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.60, #queue-req: 0, 
+[2026-01-28 22:45:11 PP1 TP0] Decode batch, #running-req: 1, #token: 292, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.59, #queue-req: 0, 
+[2026-01-28 22:45:12] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:12 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:45:12] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:12 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:45:12 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:45:12 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:45:13 PP0 TP0] Decode batch, #running-req: 1, #token: 134, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.90, #queue-req: 0, 
+[2026-01-28 22:45:13 PP1 TP0] Decode batch, #running-req: 1, #token: 134, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.91, #queue-req: 0, 
+[2026-01-28 22:45:16 PP0 TP0] Decode batch, #running-req: 1, #token: 174, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.69, #queue-req: 0, 
+[2026-01-28 22:45:16 PP1 TP0] Decode batch, #running-req: 1, #token: 174, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.69, #queue-req: 0, 
+[2026-01-28 22:45:18 PP0 TP0] Decode batch, #running-req: 1, #token: 214, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.69, #queue-req: 0, 
+[2026-01-28 22:45:18 PP1 TP0] Decode batch, #running-req: 1, #token: 214, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.68, #queue-req: 0, 
+[2026-01-28 22:45:20 PP0 TP0] Decode batch, #running-req: 1, #token: 254, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.68, #queue-req: 0, 
+[2026-01-28 22:45:20 PP1 TP0] Decode batch, #running-req: 1, #token: 254, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.68, #queue-req: 0, 
+[2026-01-28 22:45:22 PP0 TP0] Decode batch, #running-req: 1, #token: 294, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.46, #queue-req: 0, 
+[2026-01-28 22:45:23 PP1 TP0] Decode batch, #running-req: 1, #token: 294, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.47, #queue-req: 0, 
+[2026-01-28 22:45:23] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:23] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:23 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:45:23 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:45:23 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 1, #queue-req: 0, 
+[2026-01-28 22:45:24 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:45:25 PP0 TP0] Decode batch, #running-req: 1, #token: 136, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.77, #queue-req: 0, 
+[2026-01-28 22:45:25 PP1 TP0] Decode batch, #running-req: 1, #token: 136, token usage: 0.00, cuda graph: False, gen throughput (token/s): 15.77, #queue-req: 0, 
+[2026-01-28 22:45:27 PP0 TP0] Decode batch, #running-req: 1, #token: 176, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.14, #queue-req: 0, 
+[2026-01-28 22:45:27 PP1 TP0] Decode batch, #running-req: 1, #token: 176, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.11, #queue-req: 0, 
+[2026-01-28 22:45:30 PP0 TP0] Decode batch, #running-req: 1, #token: 216, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.60, #queue-req: 0, 
+[2026-01-28 22:45:30 PP1 TP0] Decode batch, #running-req: 1, #token: 216, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.64, #queue-req: 0, 
+[2026-01-28 22:45:32 PP0 TP0] Decode batch, #running-req: 1, #token: 256, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.99, #queue-req: 0, 
+[2026-01-28 22:45:32 PP1 TP0] Decode batch, #running-req: 1, #token: 256, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.99, #queue-req: 0, 
+[2026-01-28 22:45:34 PP0 TP0] Decode batch, #running-req: 1, #token: 296, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.79, #queue-req: 0, 
+[2026-01-28 22:45:34 PP1 TP0] Decode batch, #running-req: 1, #token: 296, token usage: 0.00, cuda graph: False, gen throughput (token/s): 17.78, #queue-req: 0, 
+[2026-01-28 22:45:35] INFO:     127.0.0.1:59536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:35] INFO:     127.0.0.1:59544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:35 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 60, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:45:35 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 60, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:45:35 PP0 TP0] Prefill batch, #new-seq: 15, #new-token: 15, #cached-token: 900, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:45:35 PP1 TP0] Prefill batch, #new-seq: 15, #new-token: 15, #cached-token: 900, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:45:37 PP0 TP0] Decode batch, #running-req: 1, #token: 1020, token usage: 0.00, cuda graph: False, gen throughput (token/s): 88.17, #queue-req: 0, 
+[2026-01-28 22:45:37 PP1 TP0] Decode batch, #running-req: 1, #token: 1020, token usage: 0.00, cuda graph: False, gen throughput (token/s): 88.10, #queue-req: 0, 
+[2026-01-28 22:45:39 PP0 TP0] Decode batch, #running-req: 1, #token: 1340, token usage: 0.00, cuda graph: False, gen throughput (token/s): 140.94, #queue-req: 0, 
+[2026-01-28 22:45:39 PP1 TP0] Decode batch, #running-req: 1, #token: 1340, token usage: 0.00, cuda graph: False, gen throughput (token/s): 140.82, #queue-req: 0, 
+[2026-01-28 22:45:41 PP0 TP0] Decode batch, #running-req: 1, #token: 1660, token usage: 0.00, cuda graph: False, gen throughput (token/s): 138.50, #queue-req: 0, 
+[2026-01-28 22:45:41 PP1 TP0] Decode batch, #running-req: 1, #token: 1660, token usage: 0.00, cuda graph: False, gen throughput (token/s): 138.62, #queue-req: 0, 
+[2026-01-28 22:45:43 PP0 TP0] Decode batch, #running-req: 1, #token: 1980, token usage: 0.00, cuda graph: False, gen throughput (token/s): 140.37, #queue-req: 0, 
+[2026-01-28 22:45:44 PP1 TP0] Decode batch, #running-req: 1, #token: 1980, token usage: 0.00, cuda graph: False, gen throughput (token/s): 140.45, #queue-req: 0, 
+[2026-01-28 22:45:46 PP0 TP0] Decode batch, #running-req: 1, #token: 2300, token usage: 0.00, cuda graph: False, gen throughput (token/s): 140.92, #queue-req: 0, 
+[2026-01-28 22:45:46 PP1 TP0] Decode batch, #running-req: 1, #token: 2300, token usage: 0.00, cuda graph: False, gen throughput (token/s): 140.88, #queue-req: 0, 
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41168 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 60, token usage: 0.00, #running-req: 15, #queue-req: 0, 
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41182 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41184 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41198 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41202 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41208 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41212 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41226 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41236 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41252 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41264 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41268 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41278 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41284 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41290 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46] INFO:     127.0.0.1:41306 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:46 PP0 TP0] Prefill batch, #new-seq: 15, #new-token: 15, #cached-token: 900, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:45:46 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 60, token usage: 0.00, #running-req: 15, #queue-req: 0, 
+[2026-01-28 22:45:47 PP1 TP0] Prefill batch, #new-seq: 15, #new-token: 15, #cached-token: 900, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:45:48 PP0 TP0] Decode batch, #running-req: 1, #token: 1036, token usage: 0.00, cuda graph: False, gen throughput (token/s): 125.67, #queue-req: 0, 
+[2026-01-28 22:45:48 PP1 TP0] Decode batch, #running-req: 1, #token: 1036, token usage: 0.00, cuda graph: False, gen throughput (token/s): 125.64, #queue-req: 0, 
+[2026-01-28 22:45:51 PP0 TP0] Decode batch, #running-req: 1, #token: 1356, token usage: 0.00, cuda graph: False, gen throughput (token/s): 140.91, #queue-req: 0, 
+[2026-01-28 22:45:51 PP1 TP0] Decode batch, #running-req: 1, #token: 1356, token usage: 0.00, cuda graph: False, gen throughput (token/s): 140.94, #queue-req: 0, 
+[2026-01-28 22:45:53 PP0 TP0] Decode batch, #running-req: 1, #token: 1676, token usage: 0.00, cuda graph: False, gen throughput (token/s): 139.18, #queue-req: 0, 
+[2026-01-28 22:45:53 PP1 TP0] Decode batch, #running-req: 1, #token: 1676, token usage: 0.00, cuda graph: False, gen throughput (token/s): 139.11, #queue-req: 0, 
+[2026-01-28 22:45:55 PP0 TP0] Decode batch, #running-req: 1, #token: 1996, token usage: 0.00, cuda graph: False, gen throughput (token/s): 140.24, #queue-req: 0, 
+[2026-01-28 22:45:55 PP1 TP0] Decode batch, #running-req: 1, #token: 1996, token usage: 0.00, cuda graph: False, gen throughput (token/s): 140.24, #queue-req: 0, 
+[2026-01-28 22:45:57 PP0 TP0] Decode batch, #running-req: 1, #token: 2316, token usage: 0.00, cuda graph: False, gen throughput (token/s): 139.48, #queue-req: 0, 
+[2026-01-28 22:45:57 PP1 TP0] Decode batch, #running-req: 1, #token: 2316, token usage: 0.00, cuda graph: False, gen throughput (token/s): 139.51, #queue-req: 0, 
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41168 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41268 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41202 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41236 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41182 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41226 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41290 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41278 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41208 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41252 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41306 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41198 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41264 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41284 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41184 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58] INFO:     127.0.0.1:41212 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-01-28 22:45:58 PP0 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:45:58 PP1 TP0] Prefill batch, #new-seq: 1, #new-token: 49, #cached-token: 12, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:45:58 PP0 TP0] Prefill batch, #new-seq: 61, #new-token: 1501, #cached-token: 2220, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-01-28 22:45:58 PP0 TP0] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2851, in run_scheduler_process
+    scheduler.event_loop_pp()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler_pp_mixin.py", line 103, in event_loop_pp
+    result, self.launch_event = self._pp_launch_batch(
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler_pp_mixin.py", line 1056, in _pp_launch_batch
+    result = self.run_batch(self.cur_batch, pp_proxy_tensors)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2227, in run_batch
+    batch_result = self.model_worker.forward_batch_generation(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/tp_worker.py", line 509, in forward_batch_generation
+    out = self.model_runner.forward(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2225, in forward
+    output = self._forward_raw(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2303, in _forward_raw
+    ret = self.forward_extend(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2164, in forward_extend
+    return self.model.forward(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 1066, in forward
+    hidden_states = self.model(
+                    ^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 957, in forward
+    hidden_states, residual = layer(
+                              ^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 795, in forward
+    hidden_states = self.mlp(
+                    ^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 466, in forward
+    return self.forward_normal(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 524, in forward_normal
+    final_hidden_states = self.experts(hidden_states, topk_output)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 920, in forward
+    return self.forward_impl(hidden_states, topk_output)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 939, in forward_impl
+    combine_input = self.run_moe_core(
+                    ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 960, in run_moe_core
+    return self.quant_method.apply(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/quantization/compressed_tensors/compressed_tensors_moe.py", line 853, in apply
+    return self.runner.run(dispatch_output, quant_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/moe_runner/runner.py", line 78, in run
+    return self.fused_func(dispatch_output, quant_info, self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/moe_runner/triton.py", line 339, in fused_experts_none_to_triton
+    output = fused_experts(
+             ^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 213, in fused_experts
+    inplace_fused_experts(
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/_ops.py", line 1255, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 91, in inplace_fused_experts
+    fused_experts_impl(
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 445, in fused_experts_impl
+    invoke_fused_moe_kernel(
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe_triton_kernels.py", line 790, in invoke_fused_moe_kernel
+    fused_moe_kernel[grid](
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 419, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 756, in run
+    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 490, in launch_metadata
+    self._init_handles()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 464, in _init_handles
+    raise_(OutOfResources(self.metadata.shared, max_shared, "shared memory"))
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 456, in raise_
+    raise err
+triton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 147456, Hardware limit: 101376. Reducing block sizes or `num_stages` may help.
+
+[2026-01-28 22:45:58] SIGQUIT received. signum=None, frame=None. It usually means one child failed.
+[2026-01-28 22:45:58 PP0 TP3] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2851, in run_scheduler_process
+    scheduler.event_loop_pp()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler_pp_mixin.py", line 103, in event_loop_pp
+    result, self.launch_event = self._pp_launch_batch(
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler_pp_mixin.py", line 1056, in _pp_launch_batch
+    result = self.run_batch(self.cur_batch, pp_proxy_tensors)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2227, in run_batch
+    batch_result = self.model_worker.forward_batch_generation(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/tp_worker.py", line 509, in forward_batch_generation
+    out = self.model_runner.forward(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2225, in forward
+    output = self._forward_raw(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2303, in _forward_raw
+    ret = self.forward_extend(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2164, in forward_extend
+    return self.model.forward(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 1066, in forward
+    hidden_states = self.model(
+                    ^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 957, in forward
+    hidden_states, residual = layer(
+                              ^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 795, in forward
+    hidden_states = self.mlp(
+                    ^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 466, in forward
+    return self.forward_normal(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 524, in forward_normal
+    final_hidden_states = self.experts(hidden_states, topk_output)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 920, in forward
+    return self.forward_impl(hidden_states, topk_output)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 939, in forward_impl
+    combine_input = self.run_moe_core(
+                    ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 960, in run_moe_core
+    return self.quant_method.apply(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/quantization/compressed_tensors/compressed_tensors_moe.py", line 853, in apply
+    return self.runner.run(dispatch_output, quant_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/moe_runner/runner.py", line 78, in run
+    return self.fused_func(dispatch_output, quant_info, self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/moe_runner/triton.py", line 339, in fused_experts_none_to_triton
+    output = fused_experts(
+             ^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 213, in fused_experts
+    inplace_fused_experts(
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/_ops.py", line 1255, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 91, in inplace_fused_experts
+    fused_experts_impl(
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 445, in fused_experts_impl
+    invoke_fused_moe_kernel(
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe_triton_kernels.py", line 790, in invoke_fused_moe_kernel
+    fused_moe_kernel[grid](
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 419, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 756, in run
+    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 490, in launch_metadata
+    self._init_handles()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 464, in _init_handles
+    raise_(OutOfResources(self.metadata.shared, max_shared, "shared memory"))
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 456, in raise_
+    raise err
+triton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 147456, Hardware limit: 101376. Reducing block sizes or `num_stages` may help.
+
+[2026-01-28 22:45:58 PP0 TP2] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2851, in run_scheduler_process
+    scheduler.event_loop_pp()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler_pp_mixin.py", line 103, in event_loop_pp
+    result, self.launch_event = self._pp_launch_batch(
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler_pp_mixin.py", line 1056, in _pp_launch_batch
+    result = self.run_batch(self.cur_batch, pp_proxy_tensors)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2227, in run_batch
+    batch_result = self.model_worker.forward_batch_generation(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/tp_worker.py", line 509, in forward_batch_generation
+    out = self.model_runner.forward(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2225, in forward
+    output = self._forward_raw(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2303, in _forward_raw
+    ret = self.forward_extend(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2164, in forward_extend
+    return self.model.forward(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 1066, in forward
+    hidden_states = self.model(
+                    ^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 957, in forward
+    hidden_states, residual = layer(
+                              ^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 795, in forward
+    hidden_states = self.mlp(
+                    ^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 466, in forward
+    return self.forward_normal(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 524, in forward_normal
+    final_hidden_states = self.experts(hidden_states, topk_output)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 920, in forward
+    return self.forward_impl(hidden_states, topk_output)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 939, in forward_impl
+    combine_input = self.run_moe_core(
+                    ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 960, in run_moe_core
+    return self.quant_method.apply(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/quantization/compressed_tensors/compressed_tensors_moe.py", line 853, in apply
+    return self.runner.run(dispatch_output, quant_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/moe_runner/runner.py", line 78, in run
+    return self.fused_func(dispatch_output, quant_info, self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/moe_runner/triton.py", line 339, in fused_experts_none_to_triton
+    output = fused_experts(
+             ^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 213, in fused_experts
+    inplace_fused_experts(
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/_ops.py", line 1255, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 91, in inplace_fused_experts
+    fused_experts_impl(
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 445, in fused_experts_impl
+    invoke_fused_moe_kernel(
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe_triton_kernels.py", line 790, in invoke_fused_moe_kernel
+    fused_moe_kernel[grid](
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 419, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 756, in run
+    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 490, in launch_metadata
+    self._init_handles()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 464, in _init_handles
+    raise_(OutOfResources(self.metadata.shared, max_shared, "shared memory"))
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 456, in raise_
+    raise err
+triton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 147456, Hardware limit: 101376. Reducing block sizes or `num_stages` may help.
+
+[2026-01-28 22:45:58 PP0 TP1] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2851, in run_scheduler_process
+    scheduler.event_loop_pp()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler_pp_mixin.py", line 103, in event_loop_pp
+    result, self.launch_event = self._pp_launch_batch(
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler_pp_mixin.py", line 1056, in _pp_launch_batch
+    result = self.run_batch(self.cur_batch, pp_proxy_tensors)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/scheduler.py", line 2227, in run_batch
+    batch_result = self.model_worker.forward_batch_generation(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/managers/tp_worker.py", line 509, in forward_batch_generation
+    out = self.model_runner.forward(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2225, in forward
+    output = self._forward_raw(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2303, in _forward_raw
+    ret = self.forward_extend(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/model_executor/model_runner.py", line 2164, in forward_extend
+    return self.model.forward(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 1066, in forward
+    hidden_states = self.model(
+                    ^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 957, in forward
+    hidden_states, residual = layer(
+                              ^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 795, in forward
+    hidden_states = self.mlp(
+                    ^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 466, in forward
+    return self.forward_normal(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/models/glm4_moe.py", line 524, in forward_normal
+    final_hidden_states = self.experts(hidden_states, topk_output)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 920, in forward
+    return self.forward_impl(hidden_states, topk_output)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 939, in forward_impl
+    combine_input = self.run_moe_core(
+                    ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 960, in run_moe_core
+    return self.quant_method.apply(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/quantization/compressed_tensors/compressed_tensors_moe.py", line 853, in apply
+    return self.runner.run(dispatch_output, quant_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/moe_runner/runner.py", line 78, in run
+    return self.fused_func(dispatch_output, quant_info, self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/moe_runner/triton.py", line 339, in fused_experts_none_to_triton
+    output = fused_experts(
+             ^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 213, in fused_experts
+    inplace_fused_experts(
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/torch/_ops.py", line 1255, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 91, in inplace_fused_experts
+    fused_experts_impl(
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 445, in fused_experts_impl
+    invoke_fused_moe_kernel(
+  File "/workspace/sglang-pr16975/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe_triton_kernels.py", line 790, in invoke_fused_moe_kernel
+    fused_moe_kernel[grid](
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 419, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/runtime/jit.py", line 756, in run
+    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 490, in launch_metadata
+    self._init_handles()
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 464, in _init_handles
+    raise_(OutOfResources(self.metadata.shared, max_shared, "shared memory"))
+  File "/workspace/venv-sglang-pr16975/lib/python3.12/site-packages/triton/compiler/compiler.py", line 456, in raise_
+    raise err
+triton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 147456, Hardware limit: 101376. Reducing block sizes or `num_stages` may help.
+
+[2026-01-28 22:45:58 PP1 TP0] Prefill batch, #new-seq: 61, #new-token: 1501, #cached-token: 2220, token usage: 0.00, #running-req: 0, #queue-req: 0, 
+/tmp/start_tp4pp2.sh: line 9: 421436 Killed                  python3 -m sglang.launch_server --model-path zai-org/GLM-4.7-FP8 --tensor-parallel-size 4 --pipeline-parallel-size 2 --trust-remote-code --disable-cuda-graph --port 30000

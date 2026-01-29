@@ -1,0 +1,20 @@
+total 228
+drwxrwxr-x 2 root root 4096 Jan 29 00:11 .
+drwxrwxr-x 8 root root  175 Jan 29 00:11 ..
+-rw-rw-r-- 1 root root 3247 Jan 29 00:11 E=128,N=1344,device_name=NVIDIA_B200.json
+-rw-rw-r-- 1 root root 3245 Jan 29 00:11 E=128,N=1344,device_name=NVIDIA_H100_80GB_HBM3.json
+-rw-rw-r-- 1 root root 3249 Jan 29 00:11 E=128,N=1856,device_name=NVIDIA_B200.json
+-rw-rw-r-- 1 root root 3242 Jan 29 00:11 E=128,N=1856,device_name=NVIDIA_H100_80GB_HBM3.json
+-rw-rw-r-- 1 root root 3237 Jan 29 00:11 E=128,N=232,device_name=NVIDIA_B200.json
+-rw-rw-r-- 1 root root 3234 Jan 29 00:11 E=128,N=232,device_name=NVIDIA_H100_80GB_HBM3.json
+-rw-rw-r-- 1 root root 3253 Jan 29 00:11 E=128,N=2688,device_name=NVIDIA_B200.json
+-rw-rw-r-- 1 root root 3248 Jan 29 00:11 E=128,N=2688,device_name=NVIDIA_H100_80GB_HBM3.json
+-rw-rw-r-- 1 root root 3242 Jan 29 00:11 E=128,N=464,device_name=NVIDIA_B200.json
+-rw-rw-r-- 1 root root 3239 Jan 29 00:11 E=128,N=464,device_name=NVIDIA_H100_80GB_HBM3.json
+-rw-rw-r-- 1 root root 3240 Jan 29 00:11 E=128,N=928,device_name=NVIDIA_B200.json
+-rw-rw-r-- 1 root root 3239 Jan 29 00:11 E=128,N=928,device_name=NVIDIA_H100_80GB_HBM3.json
+-rw-rw-r-- 1 root root 3242 Jan 29 00:11 E=16,N=1856,device_name=NVIDIA_B200.json
+-rw-rw-r-- 1 root root 3252 Jan 29 00:11 E=16,N=1856,device_name=NVIDIA_H100_80GB_HBM3.json
+-rw-rw-r-- 1 root root 3254 Jan 29 00:11 E=16,N=2048,device_name=NVIDIA_B200.json
+-rw-rw-r-- 1 root root 3250 Jan 29 00:11 E=161,N=192,device_name=NVIDIA_B200,dtype=fp8_w8a8,per_channel_quant=True.json
+-rw-rw-r-- 1 root root 3265 Jan 29 00:11 E=161,N=192,device_name=NVIDIA_H200,dtype=fp8_w8a8,per_channel_quant=True.json

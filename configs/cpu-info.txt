@@ -1,0 +1,4 @@
+model name	: AMD EPYC 9B14 96-Core Processor
+cpu cores	: 96
+model name	: AMD EPYC 9B14 96-Core Processor
+cpu cores	: 96
