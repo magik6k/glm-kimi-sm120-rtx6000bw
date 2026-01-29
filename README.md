@@ -36,7 +36,7 @@ elif _is_cuda and CUDA_CAPABILITY[0] == 12:
     num_warps = 4 if Lq <= 64 else 8
 ```
 
-**PR submitted**: [sgl-project/sglang#TBD](https://github.com/sgl-project/sglang/pulls)
+**PR submitted**: [sgl-project/sglang#17908](https://github.com/sgl-project/sglang/pull/17908)
 
 ## Repository Contents
 
